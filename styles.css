@@ -1,0 +1,24 @@
+body {
+  background-color: #22233a;
+  margin: 0;
+  font-family: "Exo 2", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(45deg, #80e3f9, #cc92fc);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 3px 13px 1px;
+}
+p {
+  margin: 0;
+}
