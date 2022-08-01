@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.editorconfig
+.eslintrc.cjs
+.prettierrc
+.stylelintrc
+tsconfig.json
+tsconfig.node.json
