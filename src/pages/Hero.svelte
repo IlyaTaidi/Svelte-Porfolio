@@ -1,19 +1,28 @@
 <script lang="ts">
   import MyTypewriter from '../components/MyTypewriter.svelte';
 
-  const namedGradient = {
-    src: './src/assets/gradientv3.png',
-    name: 'Ilya Gnezdilov',
-    alt: 'Ilya Gnezdilov',
-    class: 'namedGradient',
-  };
+  /*   const duration = 8000;
+  const delay = 2000;
+  setTimeout(
+    () => {
+      const sFrames = Array.from(document.querySelectorAll('section'));
+      sFrames.forEach((path) => {
+        path.style.opacity = '1';
+      });
+    },
+    duration,
+    delay
+  ); */
 </script>
 
 <div class="S1">
   <div class="Hero">
     <p class="nameText">Hi, my name is</p>
     <div class="heroImage">
-      <img {...namedGradient} alt="Ilya" />
+      <img
+        src="https://imagedelivery.net/jwHiTPdD9NSTNd6dIleh1A/9f8be739-4c46-419e-ae6d-dd8782302000/public"
+        alt="Ilya"
+        class="namedGradient" />
     </div>
     <div class="typewriter">
       <p>I want to be your next</p>
