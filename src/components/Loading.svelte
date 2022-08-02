@@ -1,9 +1,10 @@
 <script lang="ts">
   import { draw } from 'svelte/transition';
   import { onMount } from 'svelte';
+  import { transitionOver } from '../lib/pageLoad';
 
-  const duration = 4000;
-  const delay = 100;
+  const duration = 3000;
+  const delay = 150;
 
   onMount(() => {
     setTimeout(
@@ -12,6 +13,7 @@
         pathFrames.forEach((path) => {
           path.style.fill = 'white';
           path.style.opacity = '0';
+          transitionOver.set(true);
         });
       },
       duration,
