@@ -28,6 +28,7 @@
         I’m a full stack developer specializing in designing and building
         <span class="exceptional">exceptional</span> user experiences.
       </div>
+      <button class="heroButton">View My Resume</button>
     </div>
   </div>
 {/if}
@@ -62,7 +63,8 @@
       '. nameText .'
       '. heroImage .'
       '. typewriter .'
-      '. heroSubtext .';
+      '. heroSubtext .'
+      '. heroButton .';
     grid-area: Hero;
   }
 
@@ -104,5 +106,20 @@
   }
   .namedGradient {
     max-width: 91vw;
+  }
+  .heroButton {
+    grid-area: heroButton;
+    height: 5vh;
+    width: 20%;
+    border-style: solid;
+    background: transparent;
+    border-color: $pink;
+    color: $pink;
+    margin-top: 1.8em;
+    border-width: 1px;
+    font-size: 1em;
+    font-weight: 100;
+    border-radius: 5px;
+    cursor: pointer;
   }
 </style>

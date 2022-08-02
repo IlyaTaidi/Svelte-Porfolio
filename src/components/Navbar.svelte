@@ -44,10 +44,10 @@
     <label for="nav" class="nav-open"><i /><i /><i /></label>
     <div class="nav-container">
       <ul>
-        <li><a href="#">Work</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Careers</a></li>
         <li><a href="#">Contact</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Services</a></li>
       </ul>
     </div>
   </nav>
@@ -58,11 +58,11 @@
   nav {
     position: absolute;
     width: 100%;
-    height: 7vh;
+    height: 9vh;
     display: flex;
     ul {
       float: right;
-      margin-right: 1em;
+      margin: 1.5em 1.5em 0 0;
       li {
         display: inline-block;
         float: left;
@@ -84,7 +84,9 @@
       }
     }
     svg {
-      height: inherit;
+      height: auto;
+      margin: 0.5em 0;
+      cursor: pointer;
     }
   }
   .nav-container {
