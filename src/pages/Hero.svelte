@@ -113,8 +113,8 @@
     width: 20%;
     border-style: solid;
     background: transparent;
-    border-color: $pink;
-    color: $pink;
+    border-color: $purple;
+    color: $purple;
     margin-top: 1.8em;
     border-width: 1px;
     font-size: 1em;
