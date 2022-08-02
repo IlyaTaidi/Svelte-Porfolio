@@ -55,7 +55,7 @@
   .Hero {
     display: grid;
     grid-template-columns: 0.1fr 2.6fr 0.1fr;
-    gap: 3vh 0px;
+    gap: 1vh 0px;
     grid-auto-rows: max-content;
     height: max-content;
     grid-template-areas:
@@ -72,9 +72,11 @@
     align-self: end;
     color: $blue;
     font-size: $smallFont;
+    margin-bottom: 0.8em;
   }
 
   .heroSubtext {
+    margin-top: 0.8em;
     grid-area: heroSubtext;
     color: $darkBlue;
     font-weight: 100;

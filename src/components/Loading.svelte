@@ -63,6 +63,7 @@
     display: flex;
     justify-content: center;
     position: absolute;
+    z-index: -1;
   }
   svg {
     height: 80%;
