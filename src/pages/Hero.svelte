@@ -87,7 +87,7 @@
   .typewriter {
     grid-area: typewriter;
     font-weight: 600;
-    color: $darkBlue;
+    color: $lightBlue;
     font-size: $largeFont;
     @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
       display: flex;
@@ -100,7 +100,7 @@
 
   .heroSubtext {
     grid-area: heroSubtext;
-    color: $darkBlue;
+    color: $lightBlue;
     font-weight: 100;
     font-size: $smallFont;
     margin-top: 0.8em;
