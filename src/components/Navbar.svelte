@@ -77,6 +77,9 @@
             color: $lightBlue;
             text-decoration: none;
           }
+          &:active {
+            color: #46546e;
+          }
         }
         &:not(:first-child) {
           margin-left: 25px;

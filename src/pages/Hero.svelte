@@ -49,16 +49,15 @@
     }
     @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
       grid-template-columns: auto;
-      grid-template-rows: 1fr auto 1fr;
+      grid-template-rows: 0.2fr auto 0.2fr;
     }
   }
 
   .Hero {
     display: grid;
-    grid-template-columns: 0.1fr 2.6fr 0.1fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
     gap: 1vh 0px;
-    grid-auto-rows: max-content;
-    height: max-content;
+    align-content: center;
     grid-template-areas:
       '. nameText .'
       '. heroImage .'
@@ -74,22 +73,15 @@
     align-self: end;
     color: $blue;
     font-size: $smallFont;
-    margin-bottom: 0.8em;
-  }
-
-  .heroSubtext {
-    margin-top: 0.8em;
-    grid-area: heroSubtext;
-    color: $darkBlue;
-    font-weight: 100;
-    font-size: $smallFont;
-    .exceptional {
-      color: $pink;
-    }
+    margin-bottom: 1.5em;
   }
 
   .heroImage {
     grid-area: heroImage;
+  }
+
+  .namedGradient {
+    max-width: 91vw;
   }
 
   .typewriter {
@@ -102,24 +94,49 @@
     }
     @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
       display: block;
+      margin-top: 0.5em;
     }
   }
-  .namedGradient {
-    max-width: 91vw;
+
+  .heroSubtext {
+    grid-area: heroSubtext;
+    color: $darkBlue;
+    font-weight: 100;
+    font-size: $smallFont;
+    margin-top: 0.8em;
+    .exceptional {
+      color: $pink;
+    }
   }
+
   .heroButton {
+    font-size: $smallFont;
     grid-area: heroButton;
     height: 5vh;
-    width: 20%;
+    width: fit-content;
     border-style: solid;
     background: transparent;
     border-color: $purple;
     color: $purple;
-    margin-top: 1.8em;
     border-width: 1px;
     font-size: 1em;
     font-weight: 100;
     border-radius: 5px;
     cursor: pointer;
+    padding: 1em 2em;
+    align-items: center;
+    display: flex;
+    &:hover {
+      background: #cc92fc1a;
+    }
+    &:active {
+      background: #6438881a;
+    }
+    @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
+      margin-top: 1.8em;
+    }
+    @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
+      margin-top: 2.5em;
+    }
   }
 </style>
