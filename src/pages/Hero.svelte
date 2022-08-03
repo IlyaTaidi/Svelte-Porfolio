@@ -13,7 +13,7 @@
 {#if fadeIn}
   <div class="S1" transition:fade={{ duration: 2000, delay: 1000 }}>
     <div class="Hero">
-      <p class="nameText">Hi, my name is</p>
+      <p class="nameText">Hi, my name is Test</p>
       <div class="heroImage">
         <img
           src="https://imagedelivery.net/jwHiTPdD9NSTNd6dIleh1A/9f8be739-4c46-419e-ae6d-dd8782302000/public"
