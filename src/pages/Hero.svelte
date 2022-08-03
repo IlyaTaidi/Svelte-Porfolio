@@ -13,7 +13,7 @@
 {#if fadeIn}
   <div class="S1" transition:fade={{ duration: 2000, delay: 1000 }}>
     <div class="Hero">
-      <p class="nameText">Hi, my name is Test</p>
+      <p class="nameText">Hi, my name is</p>
       <div class="heroImage">
         <img
           src="https://imagedelivery.net/jwHiTPdD9NSTNd6dIleh1A/9f8be739-4c46-419e-ae6d-dd8782302000/public"
@@ -48,15 +48,15 @@
     }
     @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
       grid-template-columns: auto;
-      grid-template-rows: 0.05fr auto 0.2fr;
+      grid-template-rows: 0.01fr auto 0.2fr;
     }
   }
 
   .Hero {
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.5fr;
-    gap: 2vh 0px;
     align-content: center;
+    gap: 2.4vh 0px;
     grid-template-areas:
       '. nameText .'
       '. heroImage .'
@@ -71,9 +71,9 @@
     align-self: end;
     color: $blue;
     font-size: $smallerFont;
-    font-weight: $titleWeight;
     font-family: $titleFont;
-    /*     margin-bottom: 1.3em; */
+    font-weight: $titleWeight;
+    margin-bottom: -1vh;
   }
 
   .heroImage {
@@ -117,7 +117,7 @@
     padding: 0.5em 1em;
     align-items: center;
     display: flex;
-    margin-top: 1em;
+    margin-top: 1.5em;
     &:hover {
       background: #cc92fc1a;
     }
