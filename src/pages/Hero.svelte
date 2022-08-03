@@ -11,7 +11,7 @@
 </script>
 
 {#if fadeIn}
-  <div class="S1" transition:fade={{ duration: 2000, delay: 1000 }}>
+  <div class="S1" transition:fade={{ duration: 1200, delay: 200 }}>
     <div class="Hero">
       <p class="nameText">Hi, my name is</p>
       <div class="heroImage">
