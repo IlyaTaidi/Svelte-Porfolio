@@ -6,7 +6,7 @@
     'Artist',
     'Developer',
     'Designer',
-    'Musician',
+    'Engineer',
     'Maker',
   ];
   const typewriterProps = {
@@ -17,20 +17,44 @@
   } as TypewriterProps;
 </script>
 
-<Typewriter {...typewriterProps}>
-  {#each typewriterContent as position}
-    <p class="typewriter">{position}</p>
-  {/each}
-</Typewriter>
+<div class="typewriterContainer">
+  <p class="typewriterPretext">I want to be your next</p>
+  <Typewriter {...typewriterProps}>
+    {#each typewriterContent as position}
+      <p class="typewriterText">{position}</p>
+    {/each}
+  </Typewriter>
+</div>
 
 <style lang="scss">
   @import '../variables.scss';
-  .typewriter {
-    font-weight: 600;
-    color: $teal;
+  p {
+    font-family: $titleFont;
+    font-weight: $titleWeight;
+  }
+  .typewriterPretext {
+    color: $lightBlue;
+    @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
+      font-size: $largeFont;
+    }
+    @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
+      font-size: $mediumFont;
+    }
+  }
+  .typewriterText {
     font-size: $largeFont;
+    color: $teal;
     @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
       margin-left: 0.3em;
+    }
+  }
+  .typewriterContainer {
+    grid-area: typewriter;
+    @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
+      display: flex;
+    }
+    @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
+      display: block;
     }
   }
 </style>

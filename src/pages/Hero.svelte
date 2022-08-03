@@ -21,14 +21,13 @@
           class="namedGradient" />
       </div>
       <div class="typewriter">
-        <p>I want to be your next</p>
         <MyTypewriter />
       </div>
       <div class="heroSubtext">
         I’m a full stack developer specializing in designing and building
         <span class="exceptional">exceptional</span> user experiences.
       </div>
-      <button class="heroButton">View My Resume</button>
+      <div class="heroButton">View My Resume</div>
     </div>
   </div>
 {/if}
@@ -69,10 +68,11 @@
 
   .nameText {
     grid-area: nameText;
-    font-weight: 100;
     align-self: end;
     color: $blue;
     font-size: $smallFont;
+    font-weight: $titleWeight;
+    font-family: $titleFont;
     margin-bottom: 1.5em;
   }
 
@@ -81,62 +81,48 @@
   }
 
   .namedGradient {
-    max-width: 91vw;
+    max-width: 89vw;
   }
 
   .typewriter {
     grid-area: typewriter;
-    font-weight: 600;
-    color: $lightBlue;
-    font-size: $largeFont;
-    @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
-      display: flex;
-    }
-    @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
-      display: block;
-      margin-top: 0.5em;
-    }
   }
 
   .heroSubtext {
     grid-area: heroSubtext;
     color: $lightBlue;
-    font-weight: 100;
     font-size: $smallFont;
+    font-family: $textFont;
+    font-weight: $textWeight;
     margin-top: 0.8em;
+    letter-spacing: -1px;
     .exceptional {
       color: $pink;
     }
   }
 
   .heroButton {
-    font-size: $smallFont;
+    font-size: $smallerFont;
+    font-family: $textFont;
+    font-weight: $textWeight;
     grid-area: heroButton;
-    height: 5vh;
     width: fit-content;
     border-style: solid;
     background: transparent;
-    border-color: $purple;
-    color: $purple;
+    border-color: #cc92fc;
+    color: #cc92fc;
     border-width: 1px;
-    font-size: 1em;
-    font-weight: 100;
     border-radius: 5px;
     cursor: pointer;
-    padding: 1em 2em;
+    padding: 0.5em 1em;
     align-items: center;
     display: flex;
+    margin-top: 1em;
     &:hover {
       background: #cc92fc1a;
     }
     &:active {
       background: #6438881a;
-    }
-    @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
-      margin-top: 1.8em;
-    }
-    @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
-      margin-top: 2.5em;
     }
   }
 </style>
