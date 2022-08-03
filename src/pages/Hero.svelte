@@ -48,14 +48,14 @@
     }
     @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
       grid-template-columns: auto;
-      grid-template-rows: 0.2fr auto 0.2fr;
+      grid-template-rows: 0.05fr auto 0.2fr;
     }
   }
 
   .Hero {
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.5fr;
-    gap: 1vh 0px;
+    gap: 2vh 0px;
     align-content: center;
     grid-template-areas:
       '. nameText .'
@@ -70,10 +70,10 @@
     grid-area: nameText;
     align-self: end;
     color: $blue;
-    font-size: $smallFont;
+    font-size: $smallerFont;
     font-weight: $titleWeight;
     font-family: $titleFont;
-    margin-bottom: 1.5em;
+    /*     margin-bottom: 1.3em; */
   }
 
   .heroImage {

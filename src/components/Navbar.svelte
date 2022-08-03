@@ -56,6 +56,7 @@
 <style lang="scss">
   @import '../variables.scss';
   nav {
+    font-family: $titleFont;
     position: absolute;
     width: 100%;
     height: 9vh;
@@ -104,7 +105,8 @@
       height: 100vh;
       width: 100vw;
       z-index: -1;
-      background: $darkBlue;
+      backdrop-filter: blur(20px);
+      background: #0000004d;
       opacity: 0;
       transition: all 0.2s ease;
       ul {

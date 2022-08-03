@@ -31,9 +31,6 @@
   p {
     font-family: $titleFont;
     font-weight: $titleWeight;
-  }
-  .typewriterPretext {
-    color: $lightBlue;
     @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
       font-size: $largeFont;
     }
@@ -41,8 +38,11 @@
       font-size: $mediumFont;
     }
   }
+  .typewriterPretext {
+    color: $lightBlue;
+  }
   .typewriterText {
-    font-size: $largeFont;
+    font-size: $mediumFont;
     color: $teal;
     @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
       margin-left: 0.3em;
