@@ -1,36 +1,26 @@
 <script lang="ts">
-  import { fade } from 'svelte/transition';
   import MyTypewriter from '../components/MyTypewriter.svelte';
-  import { transitionOver } from '../lib/pageLoad';
-
-  let fadeIn;
-
-  transitionOver.subscribe((data) => {
-    fadeIn = data;
-  });
 </script>
 
-{#if fadeIn}
-  <div class="S1" transition:fade={{ duration: 1200, delay: 200 }}>
-    <div class="Hero">
-      <p class="nameText">Hi, my name is</p>
-      <div class="heroImage">
-        <img
-          src="https://imagedelivery.net/jwHiTPdD9NSTNd6dIleh1A/9f8be739-4c46-419e-ae6d-dd8782302000/public"
-          alt="Ilya"
-          class="namedGradient" />
-      </div>
-      <div class="typewriter">
-        <MyTypewriter />
-      </div>
-      <div class="heroSubtext">
-        I’m a full stack developer specializing in designing and building
-        <span class="exceptional">exceptional</span> user experiences.
-      </div>
-      <div class="heroButton">View My Resume</div>
+<div class="S1">
+  <div class="Hero">
+    <p class="nameText">Hi, my name is</p>
+    <div class="heroImage">
+      <img
+        src="https://imagedelivery.net/jwHiTPdD9NSTNd6dIleh1A/9f8be739-4c46-419e-ae6d-dd8782302000/public"
+        alt="Ilya"
+        class="namedGradient" />
     </div>
+    <div class="typewriter">
+      <MyTypewriter />
+    </div>
+    <div class="heroSubtext">
+      I’m a full stack developer specializing in designing and building
+      <span class="exceptional">exceptional</span> user experiences.
+    </div>
+    <div class="heroButton">View My Resume</div>
   </div>
-{/if}
+</div>
 
 <style lang="scss">
   @import '../variables.scss';
