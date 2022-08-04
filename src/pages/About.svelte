@@ -1,6 +1,7 @@
 <script>
   import { fade, fly } from 'svelte/transition';
   import Icon from '@iconify/svelte';
+  import DeviceDetector from 'svelte-device-detector';
 
   let cardState = 'ABOUT';
   let y;
@@ -74,52 +75,91 @@
           <h1 class="S2Name">Ilya Gnezdilov</h1>
           <h2 class="S2Job">Full Stack Designer</h2>
         </div>
-        {#if cardState === 'ABOUT'}
-          <div
-            class="S2About"
-            transition:fly={{ x: -100, duration: 700, delay: 50 }}>
-            <p class="AboutHeader">About Me</p>
-            <p class="AboutContent">
-              I’m a self taught Full Stack Developer with experience in JS/TS,
-              Python, Angular/Ionic, Cordova/Capacitor with a passion for
-              Design. Living in Florida, born in Ukraine.
-              <br />
-              <br />
-              Whether it’s creating servers in Node, Building complex database structures
-              in Firebase, Designing/Building beautiful PWA’s or creating unique
-              user experiences; I will bring your ideas to life.
-            </p>
-            <p class="AboutSkills">Technologies and Tools</p>
-            <div class="AboutFooter">
-              {#each skillIcons as { icon, name }}
-                <div class="icon">
-                  <Icon {icon} {width} {height} />
-                  <p class="iconName">{name}</p>
-                </div>
-              {/each}
-              {#each skillIconsMobile as { icon, name }}
-                <div class="iconMobile">
-                  <Icon {icon} {width} {height} />
-                  <p class="iconName">{name}</p>
-                </div>
-              {/each}
+        <DeviceDetector showInDevice="desktop">
+          {#if cardState === 'ABOUT'}
+            <div
+              class="S2About"
+              transition:fly={{ x: -100, duration: 700, delay: 50 }}>
+              <p class="AboutHeader">About Me</p>
+              <p class="AboutContent">
+                I’m a self taught Full Stack Developer with experience in JS/TS,
+                Python, Angular/Ionic, Cordova/Capacitor with a passion for
+                Design. Living in Florida, born in Ukraine.
+                <br />
+                <br />
+                Whether it’s creating servers in Node, Building complex database
+                structures in Firebase, Designing/Building beautiful PWA’s or creating
+                unique user experiences; I will bring your ideas to life.
+              </p>
+              <p class="AboutSkills">Technologies and Tools</p>
+              <div class="AboutFooter">
+                {#each skillIcons as { icon, name }}
+                  <div class="icon">
+                    <Icon {icon} {width} {height} />
+                    <p class="iconName">{name}</p>
+                  </div>
+                {/each}
+              </div>
             </div>
-          </div>
-        {/if}
-        {#if cardState === 'EXPERIENCE'}
-          <div
-            class="S2Experience"
-            transition:fly={{ x: -100, duration: 700, delay: 50 }}>
-            Experience
-          </div>
-        {/if}
-        {#if cardState === 'CONTACT'}
-          <div
-            class="S2Contact"
-            transition:fly={{ x: -100, duration: 700, delay: 50 }}>
-            Contact
-          </div>
-        {/if}
+          {/if}
+          {#if cardState === 'EXPERIENCE'}
+            <div
+              class="S2Experience"
+              transition:fly={{ x: -100, duration: 700, delay: 50 }}>
+              Experience
+            </div>
+          {/if}
+          {#if cardState === 'CONTACT'}
+            <div
+              class="S2Contact"
+              transition:fly={{ x: -100, duration: 700, delay: 50 }}>
+              Contact
+            </div>
+          {/if}
+        </DeviceDetector>
+
+        <DeviceDetector showInDevice="mobile">
+          {#if cardState === 'ABOUT'}
+            <div
+              class="S2About"
+              transition:fly={{ y: -100, duration: 700, delay: 50 }}>
+              <p class="AboutHeader">About Me</p>
+              <p class="AboutContent">
+                I’m a self taught Full Stack Developer with experience in JS/TS,
+                Python, Angular/Ionic, Cordova/Capacitor with a passion for
+                Design. Living in Florida, born in Ukraine.
+                <br />
+                <br />
+                Whether it’s creating servers in Node, Building complex database
+                structures in Firebase, Designing/Building beautiful PWA’s or creating
+                unique user experiences; I will bring your ideas to life.
+              </p>
+              <p class="AboutSkills">Technologies and Tools</p>
+              <div class="AboutFooter">
+                {#each skillIconsMobile as { icon, name }}
+                  <div class="iconMobile">
+                    <Icon {icon} {width} {height} />
+                    <p class="iconName">{name}</p>
+                  </div>
+                {/each}
+              </div>
+            </div>
+          {/if}
+          {#if cardState === 'EXPERIENCE'}
+            <div
+              class="S2Experience"
+              transition:fly={{ y: -100, duration: 700, delay: 50 }}>
+              Experience
+            </div>
+          {/if}
+          {#if cardState === 'CONTACT'}
+            <div
+              class="S2Contact"
+              transition:fly={{ y: -100, duration: 700, delay: 50 }}>
+              Contact
+            </div>
+          {/if}
+        </DeviceDetector>
       </div>
     </div>
   {/if}
@@ -130,20 +170,26 @@
   .S2 {
     display: grid;
     height: 100vh;
+    gap: 0px 0px;
+    grid-template-areas:
+      '. . .'
+      '. S2Card .'
+      '. . .';
     @media (min-aspect-ratio: 11/8) {
+      width: 100vw;
       grid-template-columns: 0.4fr 2.2fr 0.4fr;
       grid-template-rows: 0.5fr 1.9fr 0.6fr;
-      gap: 0px 0px;
-
-      grid-template-areas:
-        '. . .'
-        '. S2Card .'
-        '. . .';
+    }
+    @media (max-aspect-ratio: 11/8) {
+      width: fit-content;
+      grid-template-columns: 4vw 90vw 3vw;
+      grid-template-rows: 0.5fr 1.9fr 0.6fr;
     }
   }
 
   .S2Card {
     display: grid;
+    width: 100%;
     grid-area: S2Card;
     color: $evenLighterBlue;
     border-bottom: 1px solid $purple;
@@ -154,8 +200,6 @@
     }
     @media (max-aspect-ratio: 11/8) {
       gap: 2vh 0em;
-      margin: 1em;
-      padding-right: 10px;
       border-left: 1px solid $purple;
       grid-template-columns: 1fr;
       grid-template-rows: auto 0.3fr;
@@ -171,10 +215,9 @@
     cursor: pointer;
     font-family: $titleFont;
     p {
-      padding: 13px 4px;
       flex: 1 1 auto;
       transition: 0.3s;
-      font-size: 26px;
+      font-size: $smallFont;
       @media (min-aspect-ratio: 11/8) {
         &:hover {
           background: linear-gradient(
@@ -258,7 +301,6 @@
     display: grid;
     height: 100%;
     grid-template-columns: 1fr;
-    gap: 2vh 0px;
     grid-template-areas:
       'AboutHeader'
       'AboutContent'
@@ -266,12 +308,12 @@
       'AboutFooter';
     grid-area: 2 / 1 / 3 / 2;
     width: 100%;
-
     @media (min-aspect-ratio: 11/8) {
-      padding-left: 2vw;
+      gap: 2vh 0px;
     }
     @media (max-aspect-ratio: 11/8) {
-      padding-left: 1.5em;
+      gap: 1vh 0px;
+      margin-left: 4vw;
     }
   }
 
@@ -279,25 +321,27 @@
     grid-area: AboutHeader;
     font-family: $titleFont;
     font-weight: 600;
-    font-size: 24px;
+    font-size: $smallFont;
   }
 
   .AboutContent {
     grid-area: AboutContent;
     font-family: $textFont;
     font-weight: 200;
+    font-size: $tinyFont;
   }
 
   .AboutFooter {
     grid-area: AboutFooter;
     display: grid;
-    gap: 1rem;
     grid-auto-rows: 90px;
     @media (min-aspect-ratio: 11/8) {
+      gap: 1rem;
       grid-template-columns: repeat(auto-fit, [col-start] 108px [col-end]);
     }
     @media (max-aspect-ratio: 11/8) {
-      grid-template-columns: repeat(auto-fit, [col-start] 75px [col-end]);
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, [col-start] 20vw [col-end]);
     }
     .icon {
       display: flex;
@@ -356,7 +400,7 @@
     grid-area: AboutSkills;
     font-family: $titleFont;
     font-weight: 600;
-    font-size: 24px;
+    font-size: $smallFont;
   }
 
   .S2Experience {
@@ -385,11 +429,12 @@
     white-space: nowrap;
     font-family: $titleFont;
     color: white;
+    font-size: $smediumFont;
   }
 
   .S2Job {
     font-family: $textFont;
-    font-size: 1em;
+    font-size: $tinyFont;
     white-space: nowrap;
     font-weight: 300;
     opacity: 0.7;
