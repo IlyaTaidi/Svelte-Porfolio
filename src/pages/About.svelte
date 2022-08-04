@@ -1,5 +1,6 @@
 <script>
   import { fade } from 'svelte/transition';
+  import { transitionOver } from '../lib/pageLoad';
 
   let cardState = 'ABOUT';
 
@@ -7,36 +8,43 @@
     cardState = event.target.innerText;
     console.log(cardState);
   }
+
+  let fadeIn;
+  transitionOver.subscribe((data) => {
+    fadeIn = data;
+  });
 </script>
 
-<div class="S2">
-  <div class="S2Card">
-    <div class="S2Buttons">
-      <p on:click={(e) => handler(e)}>ABOUT</p>
-      <p on:click={(e) => handler(e)}>EXPERIENCE</p>
-      <p on:click={(e) => handler(e)}>CONTACT</p>
-    </div>
-    <div class="S2Main">
-      <div class="S2Header">
-        <img
-          class="S2Avatar"
-          src="https://imagedelivery.net/jwHiTPdD9NSTNd6dIleh1A/4a03b406-d9bf-44a7-d232-da5183b45a00/public"
-          alt="avatar" />
-        <h1 class="S2Name">Ilya Gnezdilov</h1>
-        <h2 class="S2Job">Full Stack Designer</h2>
+{#if fadeIn}
+  <div class="S2" transition:fade>
+    <div class="S2Card">
+      <div class="S2Buttons">
+        <p on:click={(e) => handler(e)}>ABOUT</p>
+        <p on:click={(e) => handler(e)}>EXPERIENCE</p>
+        <p on:click={(e) => handler(e)}>CONTACT</p>
       </div>
-      {#if cardState === 'ABOUT'}
-        <div class="S2About" transition:fade>About</div>
-      {/if}
-      {#if cardState === 'EXPERIENCE'}
-        <div class="S2Experience" transition:fade>Experience</div>
-      {/if}
-      {#if cardState === 'CONTACT'}
-        <div class="S2Contact" transition:fade>Contact</div>
-      {/if}
+      <div class="S2Main">
+        <div class="S2Header">
+          <img
+            class="S2Avatar"
+            src="https://imagedelivery.net/jwHiTPdD9NSTNd6dIleh1A/4a03b406-d9bf-44a7-d232-da5183b45a00/public"
+            alt="avatar" />
+          <h1 class="S2Name">Ilya Gnezdilov</h1>
+          <h2 class="S2Job">Full Stack Designer</h2>
+        </div>
+        {#if cardState === 'ABOUT'}
+          <div class="S2About" transition:fade>About</div>
+        {/if}
+        {#if cardState === 'EXPERIENCE'}
+          <div class="S2Experience" transition:fade>Experience</div>
+        {/if}
+        {#if cardState === 'CONTACT'}
+          <div class="S2Contact" transition:fade>Contact</div>
+        {/if}
+      </div>
     </div>
   </div>
-</div>
+{/if}
 
 <style lang="scss">
   @import '../variables.scss';
