@@ -9,39 +9,40 @@
   }
   const width = 50;
   const height = 50;
+
   const skillIcons = [
-    'logos:typescript-icon',
-    'logos:python',
-    'logos:javascript',
-    'vscode-icons:file-type-html',
-    'vscode-icons:file-type-css',
-    'vscode-icons:file-type-sass',
-    'logos:nodejs',
-    'logos:svelte-icon',
-    'logos:react',
-    'logos:angular-icon',
-    'logos:vue',
-    'fa-brands:git-square',
-    'logos:jquery',
-    'logos:elasticsearch',
-    'logos:ionic',
-    'logos:bootstrap',
-    'vscode-icons:file-type-sql',
-    'logos:mysql',
-    'logos:firebase',
-    'logos:jira',
-    'logos:trello',
-    'vscode-icons:file-type-maya',
+    { icon: 'logos:typescript-icon', name: 'Typescript' },
+    { icon: 'logos:python', name: 'Python' },
+    { icon: 'logos:javascript', name: 'Javascript' },
+    { icon: 'vscode-icons:file-type-html', name: 'HTML' },
+    { icon: 'vscode-icons:file-type-css', name: 'CSS' },
+    { icon: 'vscode-icons:file-type-sass', name: 'SASS' },
+    { icon: 'logos:nodejs', name: 'NodeJS' },
+    { icon: 'logos:svelte-icon', name: 'Svelte' },
+    { icon: 'logos:react', name: 'React' },
+    { icon: 'logos:angular-icon', name: 'Angular' },
+    { icon: 'logos:vue', name: 'Vue' },
+    { icon: 'fa-brands:git-square', name: 'Git' },
+    { icon: 'logos:jquery', name: 'jQuery' },
+    { icon: 'logos:elasticsearch', name: 'ElasticSearch' },
+    { icon: 'logos:ionic', name: 'Ionic' },
+    { icon: 'logos:bootstrap', name: 'Bootstrap' },
+    { icon: 'vscode-icons:file-type-sql', name: 'SQL' },
+    { icon: 'logos:mysql', name: 'MySQL' },
+    { icon: 'logos:firebase', name: 'Firebase' },
+    { icon: 'logos:jira', name: 'Jira' },
+    { icon: 'logos:trello', name: 'Trello' },
+    { icon: 'vscode-icons:file-type-maya', name: 'Autodesk Maya' },
   ];
   const skillIconsMobile = [
-    'logos:typescript-icon',
-    'logos:python',
-    'logos:javascript',
-    'logos:nodejs',
-    'logos:svelte-icon',
-    'logos:react',
-    'logos:angular-icon',
-    'logos:vue',
+    { icon: 'logos:typescript-icon', name: 'Typescript' },
+    { icon: 'logos:python', name: 'Python' },
+    { icon: 'logos:javascript', name: 'Javascript' },
+    { icon: 'logos:nodejs', name: 'NodeJS' },
+    { icon: 'logos:svelte-icon', name: 'Svelte' },
+    { icon: 'logos:react', name: 'React' },
+    { icon: 'logos:angular-icon', name: 'Angular' },
+    { icon: 'logos:vue', name: 'Vue' },
   ];
 </script>
 
@@ -84,14 +85,16 @@
           </p>
           <p class="AboutSkills">Technologies and Tools</p>
           <div class="AboutFooter">
-            {#each skillIcons as icon}
+            {#each skillIcons as { icon, name }}
               <div class="icon">
                 <Icon {icon} {width} {height} />
+                <p class="iconName">{name}</p>
               </div>
             {/each}
-            {#each skillIconsMobile as icon}
+            {#each skillIconsMobile as { icon, name }}
               <div class="iconMobile">
                 <Icon {icon} {width} {height} />
+                <p class="iconName">{name}</p>
               </div>
             {/each}
           </div>
@@ -269,7 +272,7 @@
     grid-area: AboutFooter;
     display: grid;
     gap: 1rem;
-    grid-auto-rows: 75px;
+    grid-auto-rows: 90px;
     @media (min-aspect-ratio: 11/8) {
       grid-template-columns: repeat(auto-fit, [col-start] 108px [col-end]);
     }
@@ -287,6 +290,7 @@
       width: 100%;
       border-radius: 4px;
       transition: all 500ms;
+      gap: 6px;
       &:hover {
         transform: scale(1.1);
         box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
@@ -296,6 +300,7 @@
       }
     }
     .iconMobile {
+      gap: 6px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -313,6 +318,16 @@
       @media (min-aspect-ratio: 11/8) {
         display: none;
       }
+    }
+  }
+  .iconName {
+    font-family: $textFont;
+    font-weight: 300;
+    @media (min-aspect-ratio: 11/8) {
+      font-size: 1em;
+    }
+    @media (max-aspect-ratio: 11/8) {
+      font-size: 13px;
     }
   }
   .AboutSkills {
