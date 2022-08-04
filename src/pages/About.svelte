@@ -46,7 +46,7 @@
             in Firebase, Designing/Building beautiful PWA’s or creating unique user
             experiences; I will bring your ideas to life.
           </p>
-          <div class="AboutSocials">Socials</div>
+          <div class="AboutFooter">Socials</div>
         </div>
       {/if}
       {#if cardState === 'EXPERIENCE'}
@@ -65,7 +65,7 @@
     display: grid;
     height: 100vh;
     @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
-      grid-template-columns: 0.5fr 2fr 0.5fr;
+      grid-template-columns: 0.4fr 2.2fr 0.4fr;
       grid-template-rows: 0.5fr 1.9fr 0.6fr;
       gap: 0px 0px;
       grid-auto-flow: row;
@@ -176,7 +176,7 @@
     grid-template-areas:
       'AboutHeader'
       'AboutContent'
-      'AboutSocials';
+      'AboutFooter';
     grid-area: 2 / 1 / 3 / 2;
   }
   .AboutHeader {
@@ -190,8 +190,8 @@
     font-family: $textFont;
     font-weight: 200;
   }
-  .AboutSocials {
-    grid-area: AboutSocials;
+  .AboutFooter {
+    grid-area: AboutFooter;
   }
   .S2Experience {
     grid-area: 2 / 1 / 3 / 2;
