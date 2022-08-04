@@ -38,16 +38,16 @@
   }
   .typewriterText {
     color: $teal;
-    @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
+    @media (min-aspect-ratio: 11/8) {
       margin-left: 0.3em;
     }
   }
   .typewriterContainer {
     grid-area: typewriter;
-    @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
+    @media (min-aspect-ratio: 11/8) {
       display: flex;
     }
-    @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
+    @media (max-aspect-ratio: 11/8) {
       display: block;
     }
   }
