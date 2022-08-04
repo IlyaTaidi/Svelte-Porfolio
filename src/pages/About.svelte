@@ -6,7 +6,6 @@
 
   function handler(event) {
     cardState = event.target.innerText;
-    console.log(cardState);
   }
   const width = 50;
   const height = 50;
@@ -32,6 +31,17 @@
     'logos:firebase',
     'logos:jira',
     'logos:trello',
+    'vscode-icons:file-type-maya',
+  ];
+  const skillIconsMobile = [
+    'logos:typescript-icon',
+    'logos:python',
+    'logos:javascript',
+    'logos:nodejs',
+    'logos:svelte-icon',
+    'logos:react',
+    'logos:angular-icon',
+    'logos:vue',
   ];
 </script>
 
@@ -79,6 +89,11 @@
                 <Icon {icon} {width} {height} />
               </div>
             {/each}
+            {#each skillIconsMobile as icon}
+              <div class="iconMobile">
+                <Icon {icon} {width} {height} />
+              </div>
+            {/each}
           </div>
         </div>
       {/if}
@@ -101,16 +116,7 @@
       grid-template-columns: 0.4fr 2.2fr 0.4fr;
       grid-template-rows: 0.5fr 1.9fr 0.6fr;
       gap: 0px 0px;
-      grid-auto-flow: row;
-      grid-template-areas:
-        '. . .'
-        '. S2Card .'
-        '. . .';
-    }
-    @media (max-aspect-ratio: 11/8) {
-      grid-template-columns: 0.2fr 2.6fr 0.2fr;
-      grid-template-rows: 0.2fr 2.6fr 0.2fr;
-      gap: 0px 0px;
+
       grid-template-areas:
         '. . .'
         '. S2Card .'
@@ -126,12 +132,15 @@
     @media (min-aspect-ratio: 11/8) {
       grid-template-columns: auto 1.8fr;
       grid-template-rows: 1fr;
-      grid-auto-flow: row;
       grid-template-areas: 'S2Buttons S2Main';
     }
     @media (max-aspect-ratio: 11/8) {
+      gap: 2vh 0em;
+      margin: 1em;
+      padding-right: 10px;
+      border-left: 1px solid $purple;
       grid-template-columns: 1fr;
-      grid-template-rows: 1.7fr 0.3fr;
+      grid-template-rows: auto 0.3fr;
       grid-template-areas:
         'S2Main'
         'S2Buttons';
@@ -148,14 +157,27 @@
       flex: 1 1 auto;
       transition: 0.3s;
       font-size: 26px;
-      &:hover {
-        background: linear-gradient(
-          to left,
-          #cc92fc03 0%,
-          #cc92fc0a 44%,
-          #cc92fc26 100%
-        );
-        color: #ffffffd4;
+      @media (min-aspect-ratio: 11/8) {
+        &:hover {
+          background: linear-gradient(
+            to left,
+            #cc92fc03 0%,
+            #cc92fc0a 44%,
+            #cc92fc26 100%
+          );
+          color: #ffffffd4;
+        }
+      }
+      @media (max-aspect-ratio: 11/8) {
+        &:hover {
+          background: linear-gradient(
+            to bottom,
+            #cc92fc03 0%,
+            #cc92fc0a 44%,
+            #cc92fc26 100%
+          );
+          color: #ffffffd4;
+        }
       }
     }
     @media (min-aspect-ratio: 11/8) {
@@ -166,24 +188,37 @@
       border-left: 1px solid $purple;
     }
     @media (max-aspect-ratio: 11/8) {
+      align-self: end;
+      text-align: center;
     }
   }
   .selected {
     transition: 0.3s;
-    background: linear-gradient(
-      to left,
-      #cc92fc03 0%,
-      #cc92fc0a 44%,
-      #cc92fc26 100%
-    );
     color: #ffffffd4;
+
+    @media (min-aspect-ratio: 11/8) {
+      background: linear-gradient(
+        to left,
+        #cc92fc03 0%,
+        #cc92fc0a 44%,
+        #cc92fc26 100%
+      );
+    }
+    @media (max-aspect-ratio: 11/8) {
+      background: linear-gradient(
+        to bottom,
+        #cc92fc00 0%,
+        #cc92fc0a 44%,
+        #cc92fc26 100%
+      );
+    }
   }
   .S2Main {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.4fr 1.6fr;
     gap: 20px 0px;
-    grid-auto-flow: row;
+
     grid-area: S2Main;
     place-items: center;
   }
@@ -200,7 +235,6 @@
   }
 
   .S2About {
-    padding-left: 2vw;
     display: grid;
     height: 100%;
     grid-template-columns: 1fr;
@@ -212,6 +246,13 @@
       'AboutFooter';
     grid-area: 2 / 1 / 3 / 2;
     width: 100%;
+
+    @media (min-aspect-ratio: 11/8) {
+      padding-left: 2vw;
+    }
+    @media (max-aspect-ratio: 11/8) {
+      padding-left: 1.5em;
+    }
   }
   .AboutHeader {
     grid-area: AboutHeader;
@@ -228,8 +269,13 @@
     grid-area: AboutFooter;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 75px));
     grid-auto-rows: 75px;
+    @media (min-aspect-ratio: 11/8) {
+      grid-template-columns: repeat(auto-fit, [col-start] 108px [col-end]);
+    }
+    @media (max-aspect-ratio: 11/8) {
+      grid-template-columns: repeat(auto-fit, [col-start] 75px [col-end]);
+    }
     .icon {
       display: flex;
       flex-direction: column;
@@ -244,6 +290,28 @@
       &:hover {
         transform: scale(1.1);
         box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+      }
+      @media (max-aspect-ratio: 11/8) {
+        display: none;
+      }
+    }
+    .iconMobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #cc92fc3d;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+      height: 100%;
+      width: 100%;
+      border-radius: 4px;
+      transition: all 500ms;
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+      }
+      @media (min-aspect-ratio: 11/8) {
+        display: none;
       }
     }
   }
