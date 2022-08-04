@@ -61,7 +61,7 @@
       </div>
       {#if cardState === 'ABOUT'}
         <div class="S2About" transition:fade>
-          <p class="AboutHeader">ABOUT</p>
+          <p class="AboutHeader">About Me</p>
           <p class="AboutContent">
             I’m a self taught Full Stack Developer with experience in JS/TS,
             Python, Angular/Ionic, Cordova/Capacitor with a passion for Design.
@@ -72,6 +72,7 @@
             in Firebase, Designing/Building beautiful PWA’s or creating unique user
             experiences; I will bring your ideas to life.
           </p>
+          <p class="AboutSkills">Technologies and Tools</p>
           <div class="AboutFooter">
             {#each skillIcons as icon}
               <div class="icon">
@@ -199,15 +200,15 @@
   }
 
   .S2About {
-    padding-left: 1vw;
+    padding-left: 2vw;
     display: grid;
     height: 100%;
     grid-template-columns: 1fr;
-    grid-auto-rows: min-content;
     gap: 2vh 0px;
     grid-template-areas:
       'AboutHeader'
       'AboutContent'
+      'AboutSkills'
       'AboutFooter';
     grid-area: 2 / 1 / 3 / 2;
     width: 100%;
@@ -234,7 +235,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: $purple;
+      background: #cc92fc3d;
       box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
       height: 100%;
       width: 100%;
@@ -245,6 +246,12 @@
         box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
       }
     }
+  }
+  .AboutSkills {
+    grid-area: AboutSkills;
+    font-family: $titleFont;
+    font-weight: 600;
+    font-size: 24px;
   }
   .S2Experience {
     grid-area: 2 / 1 / 3 / 2;
