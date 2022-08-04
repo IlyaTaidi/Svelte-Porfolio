@@ -1,5 +1,6 @@
 <script>
   import { fade } from 'svelte/transition';
+  import Icon from '@iconify/svelte';
 
   let cardState = 'ABOUT';
 
@@ -7,6 +8,31 @@
     cardState = event.target.innerText;
     console.log(cardState);
   }
+  const width = 50;
+  const height = 50;
+  const skillIcons = [
+    'logos:typescript-icon',
+    'logos:python',
+    'logos:javascript',
+    'vscode-icons:file-type-html',
+    'vscode-icons:file-type-css',
+    'vscode-icons:file-type-sass',
+    'logos:nodejs',
+    'logos:svelte-icon',
+    'logos:react',
+    'logos:angular-icon',
+    'logos:vue',
+    'fa-brands:git-square',
+    'logos:jquery',
+    'logos:elasticsearch',
+    'logos:ionic',
+    'logos:bootstrap',
+    'vscode-icons:file-type-sql',
+    'logos:mysql',
+    'logos:firebase',
+    'logos:jira',
+    'logos:trello',
+  ];
 </script>
 
 <div class="S2">
@@ -46,7 +72,13 @@
             in Firebase, Designing/Building beautiful PWA’s or creating unique user
             experiences; I will bring your ideas to life.
           </p>
-          <div class="AboutFooter">Socials</div>
+          <div class="AboutFooter">
+            {#each skillIcons as icon}
+              <div class="icon">
+                <Icon {icon} {width} {height} />
+              </div>
+            {/each}
+          </div>
         </div>
       {/if}
       {#if cardState === 'EXPERIENCE'}
@@ -64,7 +96,7 @@
   .S2 {
     display: grid;
     height: 100vh;
-    @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
+    @media (min-aspect-ratio: 11/8) {
       grid-template-columns: 0.4fr 2.2fr 0.4fr;
       grid-template-rows: 0.5fr 1.9fr 0.6fr;
       gap: 0px 0px;
@@ -74,7 +106,7 @@
         '. S2Card .'
         '. . .';
     }
-    @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
+    @media (max-aspect-ratio: 11/8) {
       grid-template-columns: 0.2fr 2.6fr 0.2fr;
       grid-template-rows: 0.2fr 2.6fr 0.2fr;
       gap: 0px 0px;
@@ -90,13 +122,13 @@
     grid-area: S2Card;
     color: $evenLighterBlue;
     border-bottom: 1px solid $purple;
-    @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
+    @media (min-aspect-ratio: 11/8) {
       grid-template-columns: auto 1.8fr;
       grid-template-rows: 1fr;
       grid-auto-flow: row;
       grid-template-areas: 'S2Buttons S2Main';
     }
-    @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
+    @media (max-aspect-ratio: 11/8) {
       grid-template-columns: 1fr;
       grid-template-rows: 1.7fr 0.3fr;
       grid-template-areas:
@@ -125,14 +157,14 @@
         color: #ffffffd4;
       }
     }
-    @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
+    @media (min-aspect-ratio: 11/8) {
       writing-mode: vertical-lr;
       flex-direction: row;
       width: 2.5vw;
       transform: scale(-1);
       border-left: 1px solid $purple;
     }
-    @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
+    @media (max-aspect-ratio: 11/8) {
     }
   }
   .selected {
@@ -178,6 +210,7 @@
       'AboutContent'
       'AboutFooter';
     grid-area: 2 / 1 / 3 / 2;
+    width: 100%;
   }
   .AboutHeader {
     grid-area: AboutHeader;
@@ -192,6 +225,26 @@
   }
   .AboutFooter {
     grid-area: AboutFooter;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 75px));
+    grid-auto-rows: 75px;
+    .icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: $purple;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+      height: 100%;
+      width: 100%;
+      border-radius: 4px;
+      transition: all 500ms;
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+      }
+    }
   }
   .S2Experience {
     grid-area: 2 / 1 / 3 / 2;
