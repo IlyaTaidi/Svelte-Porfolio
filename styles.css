@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Space Mono:ital,wght@0,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Italiana:ital,wght@0,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto:ital,wght@0,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 body {
   background-color: #22233a;
@@ -24,5 +24,11 @@ body::-webkit-scrollbar-thumb {
   box-shadow: rgba(0, 0, 0, 0.12) 0 3px 13px 1px;
 }
 p {
+  margin: 0;
+}
+h1 {
+  margin: 0;
+}
+h2 {
   margin: 0;
 }
