@@ -1,9 +1,9 @@
 <script>
-  import { fade } from 'svelte/transition';
+  import { fade, fly } from 'svelte/transition';
   import Icon from '@iconify/svelte';
 
   let cardState = 'ABOUT';
-
+  let y;
   function handler(event) {
     cardState = event.target.innerText;
   }
@@ -46,68 +46,83 @@
   ];
 </script>
 
+<svelte:window bind:scrollY={y} />
 <div class="S2">
-  <div class="S2Card">
-    <div class="S2Buttons">
-      <p on:click={(e) => handler(e)} class:selected={cardState === 'ABOUT'}>
-        ABOUT
-      </p>
-      <p
-        on:click={(e) => handler(e)}
-        class:selected={cardState === 'EXPERIENCE'}>
-        EXPERIENCE
-      </p>
-      <p on:click={(e) => handler(e)} class:selected={cardState === 'CONTACT'}>
-        CONTACT
-      </p>
-    </div>
-    <div class="S2Main">
-      <div class="S2Header">
-        <img
-          class="S2Avatar"
-          src="https://imagedelivery.net/jwHiTPdD9NSTNd6dIleh1A/4a03b406-d9bf-44a7-d232-da5183b45a00/public"
-          alt="avatar" />
-        <h1 class="S2Name">Ilya Gnezdilov</h1>
-        <h2 class="S2Job">Full Stack Designer</h2>
+  {#if y >= 150}
+    <div class="S2Card" transition:fade={{ duration: 1100, delay: 300 }}>
+      <div class="S2Buttons">
+        <p on:click={(e) => handler(e)} class:selected={cardState === 'ABOUT'}>
+          ABOUT
+        </p>
+        <p
+          on:click={(e) => handler(e)}
+          class:selected={cardState === 'EXPERIENCE'}>
+          EXPERIENCE
+        </p>
+        <p
+          on:click={(e) => handler(e)}
+          class:selected={cardState === 'CONTACT'}>
+          CONTACT
+        </p>
       </div>
-      {#if cardState === 'ABOUT'}
-        <div class="S2About" transition:fade>
-          <p class="AboutHeader">About Me</p>
-          <p class="AboutContent">
-            I’m a self taught Full Stack Developer with experience in JS/TS,
-            Python, Angular/Ionic, Cordova/Capacitor with a passion for Design.
-            Living in Florida, born in Ukraine.
-            <br />
-            <br />
-            Whether it’s creating servers in Node, Building complex database structures
-            in Firebase, Designing/Building beautiful PWA’s or creating unique user
-            experiences; I will bring your ideas to life.
-          </p>
-          <p class="AboutSkills">Technologies and Tools</p>
-          <div class="AboutFooter">
-            {#each skillIcons as { icon, name }}
-              <div class="icon">
-                <Icon {icon} {width} {height} />
-                <p class="iconName">{name}</p>
-              </div>
-            {/each}
-            {#each skillIconsMobile as { icon, name }}
-              <div class="iconMobile">
-                <Icon {icon} {width} {height} />
-                <p class="iconName">{name}</p>
-              </div>
-            {/each}
-          </div>
+      <div class="S2Main">
+        <div class="S2Header">
+          <img
+            class="S2Avatar"
+            src="https://imagedelivery.net/jwHiTPdD9NSTNd6dIleh1A/4a03b406-d9bf-44a7-d232-da5183b45a00/public"
+            alt="avatar" />
+          <h1 class="S2Name">Ilya Gnezdilov</h1>
+          <h2 class="S2Job">Full Stack Designer</h2>
         </div>
-      {/if}
-      {#if cardState === 'EXPERIENCE'}
-        <div class="S2Experience" transition:fade>Experience</div>
-      {/if}
-      {#if cardState === 'CONTACT'}
-        <div class="S2Contact" transition:fade>Contact</div>
-      {/if}
+        {#if cardState === 'ABOUT'}
+          <div
+            class="S2About"
+            transition:fly={{ x: -100, duration: 700, delay: 50 }}>
+            <p class="AboutHeader">About Me</p>
+            <p class="AboutContent">
+              I’m a self taught Full Stack Developer with experience in JS/TS,
+              Python, Angular/Ionic, Cordova/Capacitor with a passion for
+              Design. Living in Florida, born in Ukraine.
+              <br />
+              <br />
+              Whether it’s creating servers in Node, Building complex database structures
+              in Firebase, Designing/Building beautiful PWA’s or creating unique
+              user experiences; I will bring your ideas to life.
+            </p>
+            <p class="AboutSkills">Technologies and Tools</p>
+            <div class="AboutFooter">
+              {#each skillIcons as { icon, name }}
+                <div class="icon">
+                  <Icon {icon} {width} {height} />
+                  <p class="iconName">{name}</p>
+                </div>
+              {/each}
+              {#each skillIconsMobile as { icon, name }}
+                <div class="iconMobile">
+                  <Icon {icon} {width} {height} />
+                  <p class="iconName">{name}</p>
+                </div>
+              {/each}
+            </div>
+          </div>
+        {/if}
+        {#if cardState === 'EXPERIENCE'}
+          <div
+            class="S2Experience"
+            transition:fly={{ x: -100, duration: 700, delay: 50 }}>
+            Experience
+          </div>
+        {/if}
+        {#if cardState === 'CONTACT'}
+          <div
+            class="S2Contact"
+            transition:fly={{ x: -100, duration: 700, delay: 50 }}>
+            Contact
+          </div>
+        {/if}
+      </div>
     </div>
-  </div>
+  {/if}
 </div>
 
 <style lang="scss">
@@ -195,6 +210,7 @@
       text-align: center;
     }
   }
+
   .selected {
     transition: 0.3s;
     color: #ffffffd4;
@@ -216,6 +232,7 @@
       );
     }
   }
+
   .S2Main {
     display: grid;
     grid-template-columns: 1fr;
@@ -257,17 +274,20 @@
       padding-left: 1.5em;
     }
   }
+
   .AboutHeader {
     grid-area: AboutHeader;
     font-family: $titleFont;
     font-weight: 600;
     font-size: 24px;
   }
+
   .AboutContent {
     grid-area: AboutContent;
     font-family: $textFont;
     font-weight: 200;
   }
+
   .AboutFooter {
     grid-area: AboutFooter;
     display: grid;
@@ -320,6 +340,7 @@
       }
     }
   }
+
   .iconName {
     font-family: $textFont;
     font-weight: 300;
@@ -330,12 +351,14 @@
       font-size: 13px;
     }
   }
+
   .AboutSkills {
     grid-area: AboutSkills;
     font-family: $titleFont;
     font-weight: 600;
     font-size: 24px;
   }
+
   .S2Experience {
     grid-area: 2 / 1 / 3 / 2;
   }
@@ -343,6 +366,7 @@
   .S2Contact {
     grid-area: 2 / 1 / 3 / 2;
   }
+
   .S2Avatar {
     width: 100px;
     height: 100px;
