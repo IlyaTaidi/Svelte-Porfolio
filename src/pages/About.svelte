@@ -280,7 +280,6 @@
   .selected {
     transition: 0.3s;
     color: white;
-
     @media (min-aspect-ratio: 11/8) {
       background: linear-gradient(
         to left,
@@ -324,7 +323,7 @@
     border-bottom: 1px solid $blue;
     padding-bottom: 1.5vh;
     gap: 4px 0px;
-    font-family: $titleFont;
+    font-family: $title;
   }
 
   .S2About {
@@ -343,7 +342,6 @@
       margin: 1em 0 2em 2em;
     }
     @media (max-aspect-ratio: 11/8) {
-      /*       gap: 0.5vh 0px; */
       margin-left: 4vw;
     }
   }
@@ -358,8 +356,8 @@
 
   .AboutContent {
     grid-area: AboutContent;
-    font-family: $textFont;
-    font-weight: 200;
+    font-family: $content;
+    font-weight: $thiner;
     font-size: $small;
   }
 
@@ -377,48 +375,48 @@
       gap: 1vh;
       grid-template-columns: repeat(auto-fit, [col-start] 20vw [col-end]);
     }
-    .icon {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: #cc92fc3d;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-      height: 100%;
-      width: 100%;
-      border-radius: 4px;
-      transition: all 500ms;
-      gap: 6px;
-      &:hover {
-        transform: scale(1.1);
-        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
-      }
-      @media (max-aspect-ratio: 11/8) {
-        display: none;
-      }
+  }
+  .icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #cc92fc3d;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    transition: all 500ms;
+    gap: 6px;
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
     }
-    .iconMobile {
-      gap: 6px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: #cc92fc3d;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-      height: 100%;
-      width: 100%;
-      border-radius: 4px;
-      transition: all 500ms;
-      &:hover {
-        transform: scale(1.1);
-        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
-      }
-      @media (min-aspect-ratio: 11/8) {
-        display: none;
-      }
+    @media (max-aspect-ratio: 11/8) {
+      display: none;
     }
   }
 
+  .iconMobile {
+    gap: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #cc92fc3d;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    transition: all 500ms;
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+    }
+    @media (min-aspect-ratio: 11/8) {
+      display: none;
+    }
+  }
   .iconName {
     font-family: $content;
     font-weight: $normal;
@@ -431,13 +429,6 @@
     font-weight: $bolder;
     font-size: $medium;
     color: $blue;
-
-    @media (min-aspect-ratio: 11/8) {
-      font-size: $smallFont;
-    }
-    @media (max-aspect-ratio: 11/8) {
-      font-size: $smallerFont;
-    }
   }
 
   .S2Experience {
