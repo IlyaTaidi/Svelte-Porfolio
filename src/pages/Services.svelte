@@ -48,17 +48,34 @@
         '. . .';
     }
     @media (max-aspect-ratio: 11/8) {
+      grid-template-columns: 0.1fr 2.6fr 0.1fr;
+      grid-template-rows: 0.5fr 0.6fr 2.6fr 0.3fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        '. . .'
+        '. ServicesHeader .'
+        '. S3 .'
+        '. . .';
     }
   }
 
   .ServicesHeader {
     display: grid;
-    grid-template-columns: 0.1fr repeat(2, 1.3fr) 1.4fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-template-areas: '. ServiceHeaderText ServiceHeaderText ServiceHeaderText';
     grid-area: ServicesHeader;
     border-bottom: 1px solid $purple;
+    @media (min-aspect-ratio: 11/8) {
+      grid-template-columns: 0.1fr repeat(2, 1.3fr) 1.4fr;
+      grid-template-rows: 1fr;
+      gap: 0px 0px;
+      grid-template-areas: '. ServiceHeaderText ServiceHeaderText ServiceHeaderText';
+    }
+    @media (max-aspect-ratio: 11/8) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      gap: 0px 0px;
+      grid-template-areas: 'ServiceHeaderText';
+      grid-area: ServicesHeader;
+    }
   }
 
   .ServiceHeaderText {
@@ -75,26 +92,43 @@
   .S3 {
     display: grid;
     grid-area: S3;
-    border-left: 1px solid $blue;
     @media (min-aspect-ratio: 11/8) {
+      border-left: 1px solid $blue;
       grid-template-columns: 0.1fr repeat(3, 1.4fr);
       grid-template-rows: 1fr;
       grid-template-areas: '. Web Mobile Backend';
       gap: 0px 0.5vw;
     }
     @media (max-aspect-ratio: 11/8) {
+      grid-auto-columns: 1fr;
+      grid-template-columns: 1fr;
+      gap: 1vh 0px;
+      grid-template-areas:
+        'Web'
+        'Mobile'
+        'Backend';
+      grid-area: 3 / 2 / 4 / 3;
     }
   }
 
   .Web {
     grid-area: Web;
+    @media (max-aspect-ratio: 11/8) {
+      height: fit-content;
+    }
   }
 
   .Mobile {
     grid-area: Mobile;
+    @media (max-aspect-ratio: 11/8) {
+      height: fit-content;
+    }
   }
 
   .Backend {
     grid-area: Backend;
+    @media (max-aspect-ratio: 11/8) {
+      height: fit-content;
+    }
   }
 </style>
