@@ -329,6 +329,7 @@
   .S2About {
     display: grid;
     height: 100%;
+    width: 100%;
     grid-template-columns: 1fr;
     grid-template-areas:
       'AboutHeader'
@@ -336,7 +337,6 @@
       'AboutSkills'
       'AboutFooter';
     grid-area: 2 / 1 / 3 / 2;
-    width: 100%;
     @media (min-aspect-ratio: 11/8) {
       gap: 2vh 0px;
       margin: 1em 0 2em 2em;
@@ -447,10 +447,16 @@
 
   .S2Contact {
     grid-area: 2 / 1 / 3 / 2;
-    width: 90%;
-    height: 90%;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
+    @media (min-aspect-ratio: 11/8) {
+      margin: 1em 0 2em 2em;
+    }
+    @media (max-aspect-ratio: 11/8) {
+      margin-left: 4vw;
+    }
   }
 
   .S2Avatar {

@@ -2,8 +2,8 @@
   import Icon from '@iconify/svelte';
 
   const color = '#b0bee7';
-  const width = 75;
-  const height = 75;
+  const width = 70;
+  const height = 70;
 </script>
 
 <div class="card-content">
@@ -70,41 +70,36 @@
 
 <style lang="scss">
   @import '../variables.scss';
+  .card-content {
+    height: 100%;
+    width: 100%;
+    line-height: 4vh;
+  }
   .card-subtitle {
     margin-bottom: 15px;
-    font-family: $titleFont;
-    font-weight: $titleWeight;
     color: $blue;
-    font-size: $smediumFont;
+    font-family: $title;
+    font-weight: $bolder;
+    font-size: $medium;
   }
   .card-subtext {
-    font-family: $textFont;
-    font-weight: $textWeight;
     color: $lightBlue;
-    @media (min-aspect-ratio: 11/8) {
-      font-size: $tinyestFont;
-    }
-    @media (max-aspect-ratio: 11/8) {
-      font-size: $tinyFont;
-    }
+    font-family: $content;
+    font-weight: $thiner;
+    font-size: $small;
   }
   .card-contact-wrapper {
     margin-top: 20px;
   }
   .card-contact {
-    font-family: $textFont;
-    font-weight: $textWeight;
+    font-family: $content;
+    font-weight: $thiner;
+    font-size: $small;
+    color: $lightBlue;
     display: flex;
     align-items: center;
-    color: $lightBlue;
-    line-height: 1.6;
+    line-height: 6vh;
     cursor: pointer;
-    @media (min-aspect-ratio: 11/8) {
-      font-size: $tinyestFont;
-    }
-    @media (max-aspect-ratio: 11/8) {
-      font-size: $tinyFont;
-    }
     svg {
       height: auto;
       position: relative;
