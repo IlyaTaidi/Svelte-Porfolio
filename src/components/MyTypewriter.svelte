@@ -3,14 +3,14 @@
   import type { TypewriterProps } from 'svelte-typewriter/types/typewriter.d';
 
   const typewriterContent = [
-    'Artist',
     'Developer',
     'Designer',
     'Engineer',
+    'Artist',
     'Maker',
   ];
   const typewriterProps = {
-    mode: 'loopRandom',
+    mode: 'loop',
     interval: 150,
     delay: 100,
     unwriteInterval: 150,
