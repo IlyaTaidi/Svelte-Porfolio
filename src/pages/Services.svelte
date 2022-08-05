@@ -1,8 +1,8 @@
 <script>
   import Card from '../components/Card.svelte';
-  import awardSVG from '../assets/award';
-  import briefcaseSVG from '../assets/briefcase';
+  import webSVG from '../assets/web';
   import chipSVG from '../assets/chip';
+  import mobileSVG from '../assets/mobile';
 </script>
 
 <div class="S3Container">
@@ -13,13 +13,13 @@
     <div class="Web">
       <Card
         title="Web Application Development"
-        icon={awardSVG}
+        icon={webSVG}
         content="Web design encompasses many different skills and disciplines in the production and maintenance of websites. The different areas of web design include web graphic design user interface design authoring, including standardised code and proprietary software user experience design and search engine" />
     </div>
     <div class="Mobile">
       <Card
         title="Mobile Application Development"
-        icon={briefcaseSVG}
+        icon={mobileSVG}
         content="We provide a range of mobile application development services including custom mobile development on Android platforms, building cross-platform apps, designing user experience and integrating novel mobile interfaces such as chat and voice." />
     </div>
     <div class="Backend">
