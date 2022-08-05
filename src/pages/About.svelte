@@ -77,20 +77,21 @@
             src="https://imagedelivery.net/jwHiTPdD9NSTNd6dIleh1A/4a03b406-d9bf-44a7-d232-da5183b45a00/public"
             alt="avatar" />
           <h1 class="S2Name">Ilya Gnezdilov</h1>
-          <h2 class="S2Job">Full Stack Designer</h2>
+          <h2 class="S2Job">Software Engineer</h2>
         </div>
         <DeviceDetector showInDevice="desktop">
           {#if cardState === 'ABOUT'}
             <div class="S2About" transition:fly={{ x: -100, duration, delay }}>
               <p class="AboutHeader">About Me</p>
               <p class="AboutContent">
-                I’m a self taught Full Stack Developer with experience in JS/TS,
-                Python, Angular/Ionic, Cordova/Capacitor with a passion for
-                Design. Living in Florida, born in Ukraine.
+                I'm a self taught Full Stack Developer with a passion for
+                Design. Born and Raised in Ukraine, Currently residing in
+                Florida.
                 <br />
-                Whether it’s creating servers in Node, Building complex database
-                structures in Firebase, Designing/Building beautiful PWA’s or creating
-                unique user experiences; I will bring your ideas to life.
+                <br />
+                Whether it's Designing/Building beautiful PWA's, Building complex
+                database structures in Firebase or creating unique user experiences;
+                I will bring your ideas to life.
               </p>
               <p class="AboutSkills">Technologies and Tools</p>
               <div class="AboutFooter">
@@ -129,14 +130,14 @@
             <div class="S2About" transition:fly={{ y: 100, duration, delay }}>
               <p class="AboutHeader">About Me</p>
               <p class="AboutContent">
-                I’m a self taught Full Stack Developer with experience in JS/TS,
-                Python, Angular/Ionic, Cordova/Capacitor with a passion for
-                Design. Living in Florida, born in Ukraine.
+                I'm a self taught Full Stack Developer with a passion for
+                Design. Born and Raised in Ukraine, Currently residing in
+                Florida.
                 <br />
                 <br />
-                Whether it’s creating servers in Node, Building complex database
-                structures in Firebase, Designing/Building beautiful PWA’s or creating
-                unique user experiences; I will bring your ideas to life.
+                Whether it's Designing/Building beautiful PWA's, Building complex
+                database structures in Firebase or creating unique user experiences;
+                I will bring your ideas to life.
               </p>
               <p class="AboutSkills">Technologies and Tools</p>
               <div class="AboutFooter">

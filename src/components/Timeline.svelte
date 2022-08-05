@@ -4,10 +4,7 @@
   import { tweened } from 'svelte/motion';
 
   const timeline = [
-    {
-      year: 2016,
-      label: 'Facilities Maintenance Technician',
-    },
+    { year: 2016, label: 'Facilities Maintenance Technician' },
     { year: 2018, label: 'Information Technology Support Engineer' },
     { year: 2019, label: 'Field IT Systems Administrator' },
     { year: 2020, label: 'Front End Web Developer' },
@@ -73,7 +70,7 @@
       font-size: 10px;
     }
     @media (max-aspect-ratio: 11/8) {
-      font-size: 64%;
+      font-size: 62.5%;
     }
   }
   .year {

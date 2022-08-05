@@ -15,10 +15,12 @@
       <MyTypewriter />
     </div>
     <div class="heroSubtext">
-      I’m a full stack developer specializing in designing and building
-      <span class="exceptional">exceptional</span> user experiences.
+      I'm a Front-End / Full-Stack Developer specializing in designing and
+      building
+      <span class="exceptional">exceptional</span> digital experiences.
     </div>
-    <div class="heroButton">View My Resume</div>
+    <a class="heroButton" href="../assets/Resume.pdf" target="_blank"
+      >View My Resume</a>
   </div>
 </div>
 
@@ -92,6 +94,7 @@
   }
 
   .heroButton {
+    text-decoration: none;
     font-size: $smallerFont;
     font-family: $textFont;
     font-weight: $textWeight;
