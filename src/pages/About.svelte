@@ -285,14 +285,15 @@
     grid-template-columns: 1fr;
     grid-template-rows: 0.4fr 1.6fr;
     gap: 20px 0px;
-    overflow: hidden;
     grid-area: S2Main;
     place-items: center;
     @media (min-aspect-ratio: 11/8) {
       height: 79vh;
+      overflow: hidden;
     }
     @media (max-aspect-ratio: 11/8) {
       height: 80vh;
+      overflow: visible;
     }
   }
 
@@ -434,9 +435,11 @@
     height: 51vh;
     @media (min-aspect-ratio: 11/8) {
       padding: 2.5vh;
+      overflow: visible;
     }
     @media (max-aspect-ratio: 11/8) {
       width: 90vw;
+      overflow: hidden;
     }
   }
 
