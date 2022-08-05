@@ -15,8 +15,7 @@
       <MyTypewriter />
     </div>
     <div class="heroSubtext">
-      I'm a Front-End / Full-Stack Developer specializing in designing and
-      building
+      I'm a Full-Stack Developer specializing in designing and building
       <span class="exceptional">exceptional</span> digital experiences.
     </div>
     <a class="heroButton" href="../assets/Resume.pdf" target="_blank"
@@ -101,9 +100,9 @@
     grid-area: nameText;
     align-self: end;
     color: $blue;
-    font-size: $smallerFont;
-    font-family: $titleFont;
-    font-weight: $titleWeight;
+    font-size: $medium;
+    font-family: $title;
+    font-weight: $bolder;
     margin-bottom: -1vh;
   }
 
@@ -122,9 +121,10 @@
   .heroSubtext {
     grid-area: heroSubtext;
     color: $lightBlue;
-    font-size: $smallFont;
-    font-family: $textFont;
-    font-weight: $textWeight;
+    font-size: $medium;
+    font-family: $content;
+    font-weight: $thiner;
+    font-weight: 200;
     margin-top: 0.8em;
     letter-spacing: -1px;
     .exceptional {
@@ -133,10 +133,10 @@
   }
 
   .heroButton {
+    font-size: $medium;
+    font-family: $content;
+    font-weight: $thiner;
     text-decoration: none;
-    font-size: $smallerFont;
-    font-family: $textFont;
-    font-weight: $textWeight;
     grid-area: heroButton;
     width: fit-content;
     border-style: solid;

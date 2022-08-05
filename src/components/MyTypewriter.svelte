@@ -29,9 +29,9 @@
 <style lang="scss">
   @import '../variables.scss';
   p {
-    font-family: $titleFont;
-    font-weight: $titleWeight;
-    font-size: $mediumFont;
+    font-family: $title;
+    font-weight: $bolder;
+    font-size: $large;
   }
   .typewriterPretext {
     color: $lightBlue;
