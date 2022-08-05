@@ -87,7 +87,6 @@
                 Python, Angular/Ionic, Cordova/Capacitor with a passion for
                 Design. Living in Florida, born in Ukraine.
                 <br />
-                <br />
                 Whether it’s creating servers in Node, Building complex database
                 structures in Firebase, Designing/Building beautiful PWA’s or creating
                 unique user experiences; I will bring your ideas to life.
@@ -153,7 +152,7 @@
             <div
               class="S2Experience"
               transition:fly={{ y: 100, duration, delay }}>
-              Experience
+              <Timeline />
             </div>
           {/if}
           {#if cardState === 'CONTACT'}
@@ -287,6 +286,12 @@
     overflow: hidden;
     grid-area: S2Main;
     place-items: center;
+    @media (min-aspect-ratio: 11/8) {
+      height: 79vh;
+    }
+    @media (max-aspect-ratio: 11/8) {
+      height: 80vh;
+    }
   }
 
   .S2Header {
@@ -316,7 +321,7 @@
       margin: 1em 0 2em 2em;
     }
     @media (max-aspect-ratio: 11/8) {
-      gap: 1vh 0px;
+      /*       gap: 0.5vh 0px; */
       margin-left: 4vw;
     }
   }
@@ -325,7 +330,12 @@
     grid-area: AboutHeader;
     font-family: $titleFont;
     font-weight: 600;
-    font-size: $smallFont;
+    @media (min-aspect-ratio: 11/8) {
+      font-size: $smallFont;
+    }
+    @media (max-aspect-ratio: 11/8) {
+      font-size: $smallerFont;
+    }
   }
 
   .AboutContent {
@@ -339,13 +349,14 @@
     grid-area: AboutFooter;
     text-align: center;
     display: grid;
-    grid-auto-rows: 96px;
     @media (min-aspect-ratio: 11/8) {
+      grid-auto-rows: 96px;
       gap: 1rem;
       grid-template-columns: repeat(auto-fit, [col-start] 5.3vw [col-end]);
     }
     @media (max-aspect-ratio: 11/8) {
-      gap: 10px;
+      grid-auto-rows: 10vh;
+      gap: 1vh;
       grid-template-columns: repeat(auto-fit, [col-start] 20vw [col-end]);
     }
     .icon {
@@ -397,7 +408,7 @@
       font-size: 1em;
     }
     @media (max-aspect-ratio: 11/8) {
-      font-size: 13px;
+      font-size: $tinyestFont;
     }
   }
 
@@ -405,14 +416,24 @@
     grid-area: AboutSkills;
     font-family: $titleFont;
     font-weight: 600;
-    font-size: $smallFont;
+    @media (min-aspect-ratio: 11/8) {
+      font-size: $smallFont;
+    }
+    @media (max-aspect-ratio: 11/8) {
+      font-size: $smallerFont;
+    }
   }
 
   .S2Experience {
     grid-area: 2 / 1 / 3 / 2;
     display: flex;
-    height: 93%;
-    width: 27vw;
+    height: 51vh;
+    @media (min-aspect-ratio: 11/8) {
+      padding: 2.5vh;
+    }
+    @media (max-aspect-ratio: 11/8) {
+      width: 90vw;
+    }
   }
 
   .S2Contact {
