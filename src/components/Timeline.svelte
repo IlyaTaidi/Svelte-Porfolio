@@ -73,7 +73,7 @@
       font-size: 10px;
     }
     @media (max-aspect-ratio: 11/8) {
-      font-size: 60%;
+      font-size: 64%;
     }
   }
   .year {

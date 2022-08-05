@@ -3,6 +3,7 @@
   import Icon from '@iconify/svelte';
   import DeviceDetector from 'svelte-device-detector';
   import Timeline from '../components/Timeline.svelte';
+  import Contact from '../components/Contact.svelte';
 
   let cardState = 'ABOUT';
   let y;
@@ -118,7 +119,7 @@
             <div
               class="S2Contact"
               transition:fly={{ x: -100, duration, delay }}>
-              Contact
+              <Contact />
             </div>
           {/if}
         </DeviceDetector>
@@ -157,7 +158,7 @@
           {/if}
           {#if cardState === 'CONTACT'}
             <div class="S2Contact" transition:fly={{ y: 100, duration, delay }}>
-              Contact
+              <Contact />
             </div>
           {/if}
         </DeviceDetector>
@@ -330,6 +331,7 @@
     grid-area: AboutHeader;
     font-family: $titleFont;
     font-weight: 600;
+    color: $blue;
     @media (min-aspect-ratio: 11/8) {
       font-size: $smallFont;
     }
@@ -416,6 +418,7 @@
     grid-area: AboutSkills;
     font-family: $titleFont;
     font-weight: 600;
+    color: $blue;
     @media (min-aspect-ratio: 11/8) {
       font-size: $smallFont;
     }
@@ -438,6 +441,10 @@
 
   .S2Contact {
     grid-area: 2 / 1 / 3 / 2;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
   }
 
   .S2Avatar {
