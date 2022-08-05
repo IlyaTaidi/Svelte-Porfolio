@@ -33,8 +33,8 @@ $titleWeight: 600;
 $textFont: "Roboto";
 $textWeight: 300;
 
-$xsmall: 15px;
-$small: 15px;
+$xsmall: calc(5px + 0.35vh + 0.35vw);
+$small: calc(9px + 0.5vh + 0.5vw);
 $medium: calc(13px + 0.6vh + 0.6vw);
 $large: calc(20px + 1.25vh + 1.25vw);
 $xlarge: 15px;

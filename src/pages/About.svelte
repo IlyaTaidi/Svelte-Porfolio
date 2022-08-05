@@ -106,6 +106,12 @@
                     {/if}
                   </div>
                 {/each}
+                {#each skillIconsMobile as { icon, name }}
+                  <div class="iconMobile">
+                    <Icon {icon} {width} {height} />
+                    <p class="iconName">{name}</p>
+                  </div>
+                {/each}
               </div>
             </div>
           {/if}
@@ -145,6 +151,17 @@
                   <div class="iconMobile">
                     <Icon {icon} {width} {height} />
                     <p class="iconName">{name}</p>
+                  </div>
+                {/each}
+                {#each skillIcons as { icon, name }}
+                  <div class="icon">
+                    {#if name === 'Git'}
+                      <Icon {icon} {width} {height} {color} />
+                      <p class="iconName">{name}</p>
+                    {:else if name !== 'Git'}
+                      <Icon {icon} {width} {height} />
+                      <p class="iconName">{name}</p>
+                    {/if}
                   </div>
                 {/each}
               </div>
@@ -214,15 +231,17 @@
 
   .S2Buttons {
     grid-area: S2Buttons;
+    font-family: $title;
+    font-size: $medium;
+    font-weight: $bolder;
+    color: #9aa8d18c;
     display: flex;
     cursor: pointer;
-    font-family: $titleFont;
     text-align: center;
 
     p {
       flex: 1 1 auto;
       transition: 0.3s;
-      font-size: $smallFont;
       @media (min-aspect-ratio: 11/8) {
         &:hover {
           background: linear-gradient(
@@ -260,7 +279,7 @@
 
   .selected {
     transition: 0.3s;
-    color: #ffffffd4;
+    color: white;
 
     @media (min-aspect-ratio: 11/8) {
       background: linear-gradient(
@@ -331,22 +350,17 @@
 
   .AboutHeader {
     grid-area: AboutHeader;
-    font-family: $titleFont;
-    font-weight: 600;
+    font-family: $title;
+    font-weight: $bolder;
+    font-size: $medium;
     color: $blue;
-    @media (min-aspect-ratio: 11/8) {
-      font-size: $smallFont;
-    }
-    @media (max-aspect-ratio: 11/8) {
-      font-size: $smallerFont;
-    }
   }
 
   .AboutContent {
     grid-area: AboutContent;
     font-family: $textFont;
     font-weight: 200;
-    font-size: $tinyFont;
+    font-size: $small;
   }
 
   .AboutFooter {
@@ -406,21 +420,18 @@
   }
 
   .iconName {
-    font-family: $textFont;
-    font-weight: 300;
-    @media (min-aspect-ratio: 11/8) {
-      font-size: 1em;
-    }
-    @media (max-aspect-ratio: 11/8) {
-      font-size: $tinyestFont;
-    }
+    font-family: $content;
+    font-weight: $normal;
+    font-size: $xsmall;
   }
 
   .AboutSkills {
     grid-area: AboutSkills;
-    font-family: $titleFont;
-    font-weight: 600;
+    font-family: $title;
+    font-weight: $bolder;
+    font-size: $medium;
     color: $blue;
+
     @media (min-aspect-ratio: 11/8) {
       font-size: $smallFont;
     }
@@ -463,24 +474,23 @@
   }
 
   .S2Name {
-    font-size: 2em;
-    font-weight: 700;
+    font-family: $title;
+    font-size: $large;
+    font-weight: $bolder;
     text-align: center;
     white-space: nowrap;
-    font-family: $titleFont;
     color: white;
-    font-size: $smediumFont;
   }
 
   .S2Job {
-    font-family: $textFont;
-    font-size: $tinyFont;
-    white-space: nowrap;
-    font-weight: 300;
+    font-family: $content;
+    font-size: $small;
+    font-weight: $normal;
+    color: $lightPurple;
     opacity: 0.7;
+    white-space: nowrap;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin: 0;
-    color: $lightPurple;
   }
 </style>
