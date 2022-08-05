@@ -10,7 +10,8 @@
   }
   const width = 50;
   const height = 50;
-
+  const duration = 400;
+  const delay = 50;
   const skillIcons = [
     { icon: 'logos:typescript-icon', name: 'Typescript' },
     { icon: 'logos:python', name: 'Python' },
@@ -77,9 +78,7 @@
         </div>
         <DeviceDetector showInDevice="desktop">
           {#if cardState === 'ABOUT'}
-            <div
-              class="S2About"
-              transition:fly={{ x: -100, duration: 700, delay: 50 }}>
+            <div class="S2About" transition:fly={{ x: -100, duration, delay }}>
               <p class="AboutHeader">About Me</p>
               <p class="AboutContent">
                 I’m a self taught Full Stack Developer with experience in JS/TS,
@@ -105,14 +104,14 @@
           {#if cardState === 'EXPERIENCE'}
             <div
               class="S2Experience"
-              transition:fly={{ x: -100, duration: 700, delay: 50 }}>
+              transition:fly={{ x: -100, duration, delay }}>
               Experience
             </div>
           {/if}
           {#if cardState === 'CONTACT'}
             <div
               class="S2Contact"
-              transition:fly={{ x: -100, duration: 700, delay: 50 }}>
+              transition:fly={{ x: -100, duration, delay }}>
               Contact
             </div>
           {/if}
@@ -120,9 +119,7 @@
 
         <DeviceDetector showInDevice="mobile">
           {#if cardState === 'ABOUT'}
-            <div
-              class="S2About"
-              transition:fly={{ y: -100, duration: 700, delay: 50 }}>
+            <div class="S2About" transition:fly={{ y: 100, duration, delay }}>
               <p class="AboutHeader">About Me</p>
               <p class="AboutContent">
                 I’m a self taught Full Stack Developer with experience in JS/TS,
@@ -148,14 +145,12 @@
           {#if cardState === 'EXPERIENCE'}
             <div
               class="S2Experience"
-              transition:fly={{ y: -100, duration: 700, delay: 50 }}>
+              transition:fly={{ y: 100, duration, delay }}>
               Experience
             </div>
           {/if}
           {#if cardState === 'CONTACT'}
-            <div
-              class="S2Contact"
-              transition:fly={{ y: -100, duration: 700, delay: 50 }}>
+            <div class="S2Contact" transition:fly={{ y: 100, duration, delay }}>
               Contact
             </div>
           {/if}
@@ -214,6 +209,8 @@
     display: flex;
     cursor: pointer;
     font-family: $titleFont;
+    text-align: center;
+
     p {
       flex: 1 1 auto;
       transition: 0.3s;
@@ -250,7 +247,6 @@
     }
     @media (max-aspect-ratio: 11/8) {
       align-self: end;
-      text-align: center;
     }
   }
 
@@ -310,6 +306,7 @@
     width: 100%;
     @media (min-aspect-ratio: 11/8) {
       gap: 2vh 0px;
+      margin: 1em 0 2em 2em;
     }
     @media (max-aspect-ratio: 11/8) {
       gap: 1vh 0px;
@@ -334,10 +331,10 @@
   .AboutFooter {
     grid-area: AboutFooter;
     display: grid;
-    grid-auto-rows: 90px;
+    grid-auto-rows: 96px;
     @media (min-aspect-ratio: 11/8) {
       gap: 1rem;
-      grid-template-columns: repeat(auto-fit, [col-start] 108px [col-end]);
+      grid-template-columns: repeat(auto-fit, [col-start] 5.5vw [col-end]);
     }
     @media (max-aspect-ratio: 11/8) {
       gap: 10px;
