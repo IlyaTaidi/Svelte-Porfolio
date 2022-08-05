@@ -56,12 +56,12 @@
       ilyakatrych@gmail.com
     </div>
     <div class="card-social">
+      <a href="https://github.com/IlyaTaidi" target="_blank">
+        <Icon icon="arcticons:github" {color} {width} {height} />
+      </a>
       <a
         href="https://www.linkedin.com/in/ilya-gnezdilov-9aaa611a2?trk=people-guest_people_search-card"
         target="_blank">
-        <Icon icon="arcticons:github" {color} {width} {height} />
-      </a>
-      <a href="https://github.com/IlyaTaidi" target="_blank">
         <Icon icon="arcticons:linkedin" {color} {width} {height} />
       </a>
     </div>

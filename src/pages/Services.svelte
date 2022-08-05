@@ -1,22 +1,22 @@
 <script>
-  import { fade } from 'svelte/transition';
+  import { fly } from 'svelte/transition';
   import chipSVG from '../assets/chip';
   import mobileSVG from '../assets/mobile';
   import webSVG from '../assets/web';
   import Card from '../components/Card.svelte';
 
   let y;
+  const duration = 900;
+  const delay = 50;
 </script>
 
 <svelte:window bind:scrollY={y} />
 <div class="S3Container">
-  {#if y >= 1130}
-    <div
-      class="ServicesHeader"
-      transition:fade={{ duration: 1100, delay: 300 }}>
+  {#if y >= 1160}
+    <div class="ServicesHeader" transition:fly={{ duration, delay }}>
       <p class="ServiceHeaderText">MY SERVICES INCLUDE</p>
     </div>
-    <div class="S3" transition:fade={{ duration: 1100, delay: 300 }}>
+    <div class="S3" transition:fly={{ duration, delay }}>
       <div class="Web">
         <Card
           title="Web Application Development"

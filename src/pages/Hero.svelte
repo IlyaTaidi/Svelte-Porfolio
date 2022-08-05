@@ -1,27 +1,35 @@
 <script lang="ts">
+  import { fly } from 'svelte/transition';
   import MyTypewriter from '../components/MyTypewriter.svelte';
+
+  let y;
+  const duration = 900;
+  const delay = 50;
 </script>
 
+<svelte:window bind:scrollY={y} />
 <div class="S1">
-  <div class="Hero">
-    <p class="nameText">Hi, my name is</p>
-    <div class="heroImage">
-      <img
-        src="https://imagedelivery.net/jwHiTPdD9NSTNd6dIleh1A/9f8be739-4c46-419e-ae6d-dd8782302000/public"
-        alt="Ilya"
-        class="namedGradient" />
+  {#if y <= 650}
+    <div class="Hero" transition:fly={{ y: 100, duration, delay }}>
+      <p class="nameText">Hi, my name is</p>
+      <div class="heroImage">
+        <img
+          src="https://imagedelivery.net/jwHiTPdD9NSTNd6dIleh1A/9f8be739-4c46-419e-ae6d-dd8782302000/public"
+          alt="Ilya"
+          class="namedGradient" />
+      </div>
+      <div class="typewriter">
+        <MyTypewriter />
+      </div>
+      <div class="heroSubtext">
+        I'm a Full-Stack Developer specializing in designing and building
+        <span class="exceptional">exceptional</span> digital experiences.
+      </div>
+      <a class="heroButton" href="../assets/Resume.pdf" target="_blank"
+        >View My Resume</a>
     </div>
-    <div class="typewriter">
-      <MyTypewriter />
-    </div>
-    <div class="heroSubtext">
-      I'm a Full-Stack Developer specializing in designing and building
-      <span class="exceptional">exceptional</span> digital experiences.
-    </div>
-    <a class="heroButton" href="../assets/Resume.pdf" target="_blank"
-      >View My Resume</a>
-  </div>
-  <div class="mouse" />
+    <div class="mouse" transition:fly={{ y: 100, duration, delay }} />
+  {/if}
 </div>
 
 <style lang="scss">

@@ -1,20 +1,21 @@
 <script>
-  import { fade, fly } from 'svelte/transition';
   import Icon from '@iconify/svelte';
   import DeviceDetector from 'svelte-device-detector';
-  import Timeline from '../components/Timeline.svelte';
+  import { fly } from 'svelte/transition';
   import Contact from '../components/Contact.svelte';
+  import Timeline from '../components/Timeline.svelte';
 
   let cardState = 'ABOUT';
   let y;
+  $: console.log(y);
   function handler(event) {
     cardState = event.target.innerText;
   }
   const width = 50;
   const height = 50;
   const duration = 400;
-  const color = '#f34f29';
   const delay = 50;
+  const color = '#f34f29';
   const skillIcons = [
     { icon: 'logos:typescript-icon', name: 'Typescript' },
     { icon: 'logos:python', name: 'Python' },
@@ -53,8 +54,8 @@
 
 <svelte:window bind:scrollY={y} />
 <div class="S2">
-  {#if y >= 150}
-    <div class="S2Card" transition:fade={{ duration: 1100, delay: 300 }}>
+  {#if y >= 150 && y <= 1500}
+    <div class="S2Card" transition:fly={{ y: 100, duration: 900, delay: 50 }}>
       <div class="S2Buttons">
         <p on:click={(e) => handler(e)} class:selected={cardState === 'ABOUT'}>
           ABOUT
