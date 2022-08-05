@@ -22,6 +22,7 @@
     <a class="heroButton" href="../assets/Resume.pdf" target="_blank"
       >View My Resume</a>
   </div>
+  <div class="mouse" />
 </div>
 
 <style lang="scss">
@@ -32,7 +33,7 @@
     grid-template-areas:
       '. . .'
       '. Hero .'
-      '. . .';
+      '. mouse .';
     height: 100vh;
     @media (min-aspect-ratio: 11/8) and (max-aspect-ratio: 32/15) {
       grid-template-columns: 0.9fr 1.2fr 0.9fr;
@@ -40,10 +41,48 @@
     }
     @media (min-aspect-ratio: 32/15), (max-aspect-ratio: 11/8) {
       grid-template-columns: auto;
-      grid-template-rows: 0.01fr auto 0.2fr;
+      grid-template-rows: 0.3fr 2fr 0.7fr;
     }
   }
+  .mouse {
+    grid-area: mouse;
+    overflow: hidden;
+    width: 24px;
+    height: 50px;
+    border: 2px solid$lightBlue;
+    border-radius: 30px;
+    opacity: 0.2;
+    display: flex;
+    margin: auto;
+  }
 
+  .mouse:after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    margin-left: 10px;
+    background-color: $lightBlue;
+    border-radius: 2px;
+    animation: mouse-wheel 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  }
+
+  @keyframes mouse-wheel {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    70% {
+      transform: translateY(15px);
+      opacity: 0.5;
+    }
+    90% {
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(15px);
+      opacity: 0;
+    }
+  }
   .Hero {
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.5fr;
