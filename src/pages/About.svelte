@@ -338,8 +338,7 @@
       'AboutFooter';
     grid-area: 2 / 1 / 3 / 2;
     @media (min-aspect-ratio: 11/8) {
-      gap: 2vh 0px;
-      margin: 1em 0 2em 2em;
+      margin-left: 2vw;
     }
     @media (max-aspect-ratio: 11/8) {
       margin-left: 4vw;

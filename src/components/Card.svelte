@@ -40,35 +40,27 @@
   .container {
     display: flex;
     flex-direction: column;
-    transition: transform 0.5s ease-in-out;
-    @media (min-aspect-ratio: 11/8) {
-      transform: translateY(4vh);
-    }
-    @media (max-aspect-ratio: 11/8) {
-      transform: translateY(1vh);
-    }
+    transition: transform 0.7s ease-in-out;
+    transform: translateY(2.5vh);
   }
   .svg {
     color: black;
-    transition: color 0.5s ease-in-out;
+    transition: color 0.7s ease-in-out;
   }
   .svg-visible {
     color: white;
   }
 
-  .container-visible {
-    /*     transform: translateY(50px); */
-  }
-
   .title {
-    font-family: $titleFont;
-    font-weight: $titleWeight;
-    font-size: $servicesFont;
+    font-family: $title;
+    font-weight: $bolder;
+    font-size: $medium;
     background-color: rgb(231, 231, 231);
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     flex-direction: column;
     transition: all 0.5s ease-in-out;
     @media (min-aspect-ratio: 11/8) {
@@ -85,7 +77,9 @@
   }
 
   .content {
-    font-family: $textFont;
+    font-family: $content;
+    font-size: $servicesFont;
+    font-weight: $thiner;
     padding: 20px 20px;
     background-color: rgb(29, 29, 29);
     color: white;
@@ -94,11 +88,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-weight: 200;
-    line-height: 27px;
-    @media (min-aspect-ratio: 11/8) {
-      height: 25vh;
-    }
+    line-height: 3vh;
     @media (max-aspect-ratio: 11/8) {
       height: fit-content;
     }

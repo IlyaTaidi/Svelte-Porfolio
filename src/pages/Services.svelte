@@ -14,7 +14,7 @@
     <div
       class="ServicesHeader"
       transition:fade={{ duration: 1100, delay: 300 }}>
-      <p class="ServiceHeaderText">Services I Provide</p>
+      <p class="ServiceHeaderText">MY SERVICES INCLUDE</p>
     </div>
     <div class="S3" transition:fade={{ duration: 1100, delay: 300 }}>
       <div class="Web">
@@ -47,7 +47,7 @@
     height: 100vh;
     @media (min-aspect-ratio: 11/8) {
       grid-template-columns: 0.2fr 2.6fr 0.2fr;
-      grid-template-rows: 0.3fr 0.3fr 1.5fr 0.5fr;
+      grid-template-rows: 0.1fr 0.3fr 1.3fr 0.3fr;
       gap: 0px 8vw;
       grid-template-areas:
         '. . .'
@@ -72,7 +72,7 @@
     grid-area: ServicesHeader;
     border-bottom: 1px solid $purple;
     @media (min-aspect-ratio: 11/8) {
-      grid-template-columns: 0.1fr repeat(2, 1.3fr) 1.4fr;
+      grid-template-columns: 0.04fr repeat(2, 1.3fr) 1.4fr;
       grid-template-rows: 1fr;
       gap: 0px 0px;
       grid-template-areas: '. ServiceHeaderText ServiceHeaderText ServiceHeaderText';
@@ -89,12 +89,13 @@
   .ServiceHeaderText {
     grid-area: ServiceHeaderText;
     color: $blue;
-    font-size: $smallerFont;
-    font-family: $titleFont;
-    font-weight: $titleWeight;
+    font-size: $medium;
+    font-family: $title;
+    font-weight: $bolder;
     display: flex;
     align-items: end;
     margin-left: 0.5vw;
+    margin: 0 0 0.2vh 0.5vw;
   }
 
   .S3 {
@@ -102,7 +103,7 @@
     grid-area: S3;
     @media (min-aspect-ratio: 11/8) {
       border-left: 1px solid $blue;
-      grid-template-columns: 0.1fr repeat(3, 1.4fr);
+      grid-template-columns: 0.04fr repeat(3, 1.4fr);
       grid-template-rows: 1fr;
       grid-template-areas: '. Web Mobile Backend';
       gap: 0px 0.5vw;
