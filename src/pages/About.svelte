@@ -2,6 +2,7 @@
   import { fade, fly } from 'svelte/transition';
   import Icon from '@iconify/svelte';
   import DeviceDetector from 'svelte-device-detector';
+  import Timeline from '../components/Timeline.svelte';
 
   let cardState = 'ABOUT';
   let y;
@@ -111,7 +112,7 @@
             <div
               class="S2Experience"
               transition:fly={{ x: -100, duration, delay }}>
-              Experience
+              <Timeline />
             </div>
           {/if}
           {#if cardState === 'CONTACT'}
@@ -283,7 +284,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 0.4fr 1.6fr;
     gap: 20px 0px;
-
+    overflow: hidden;
     grid-area: S2Main;
     place-items: center;
   }
@@ -409,6 +410,9 @@
 
   .S2Experience {
     grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    height: 93%;
+    width: 27vw;
   }
 
   .S2Contact {
