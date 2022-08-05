@@ -5,7 +5,7 @@
 
   const timeline = [
     { year: 2016, label: 'Facilities Maintenance Technician' },
-    { year: 2018, label: 'Information Technology Support Engineer' },
+    { year: 2018, label: 'IT Support Engineer' },
     { year: 2019, label: 'Field IT Systems Administrator' },
     { year: 2020, label: 'Front End Web Developer' },
     { year: 2022, label: 'Software Designer and Engineer' },
@@ -60,28 +60,26 @@
     width: 100%;
     height: 100%;
   }
-  text {
-    font-weight: $titleWeight;
-  }
   .label {
-    font-family: $titleFont;
     fill: $blue;
+    font-family: $title;
+    font-weight: $bolder;
     @media (min-aspect-ratio: 11/8) {
-      font-size: 10px;
+      font-size: 13px;
     }
     @media (max-aspect-ratio: 11/8) {
-      font-size: 62.5%;
+      font-size: 66%;
     }
   }
   .year {
-    font-family: $textFont;
+    font-family: $content;
     fill: $evenLighterBlue;
-    font-weight: 200;
+    font-weight: $normal;
     @media (min-aspect-ratio: 11/8) {
-      font-size: calc(13px + 0.3vh + 0.3vw);
+      font-size: 13px;
     }
     @media (max-aspect-ratio: 11/8) {
-      font-size: 80%;
+      font-size: 66%;
     }
   }
   line {
