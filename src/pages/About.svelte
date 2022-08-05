@@ -11,6 +11,7 @@
   const width = 50;
   const height = 50;
   const duration = 400;
+  const color = '#f34f29';
   const delay = 50;
   const skillIcons = [
     { icon: 'logos:typescript-icon', name: 'Typescript' },
@@ -26,7 +27,7 @@
     { icon: 'logos:vue', name: 'Vue' },
     { icon: 'fa-brands:git-square', name: 'Git' },
     { icon: 'logos:jquery', name: 'jQuery' },
-    { icon: 'logos:elasticsearch', name: 'ElasticSearch' },
+    { icon: 'logos:elasticsearch', name: 'Elastic' },
     { icon: 'logos:ionic', name: 'Ionic' },
     { icon: 'logos:bootstrap', name: 'Bootstrap' },
     { icon: 'vscode-icons:file-type-sql', name: 'SQL' },
@@ -34,7 +35,7 @@
     { icon: 'logos:firebase', name: 'Firebase' },
     { icon: 'logos:jira', name: 'Jira' },
     { icon: 'logos:trello', name: 'Trello' },
-    { icon: 'vscode-icons:file-type-maya', name: 'Autodesk Maya' },
+    { icon: 'vscode-icons:file-type-maya', name: 'Maya' },
   ];
   const skillIconsMobile = [
     { icon: 'logos:typescript-icon', name: 'Typescript' },
@@ -94,8 +95,13 @@
               <div class="AboutFooter">
                 {#each skillIcons as { icon, name }}
                   <div class="icon">
-                    <Icon {icon} {width} {height} />
-                    <p class="iconName">{name}</p>
+                    {#if name === 'Git'}
+                      <Icon {icon} {width} {height} {color} />
+                      <p class="iconName">{name}</p>
+                    {:else if name !== 'Git'}
+                      <Icon {icon} {width} {height} />
+                      <p class="iconName">{name}</p>
+                    {/if}
                   </div>
                 {/each}
               </div>
@@ -330,11 +336,12 @@
 
   .AboutFooter {
     grid-area: AboutFooter;
+    text-align: center;
     display: grid;
     grid-auto-rows: 96px;
     @media (min-aspect-ratio: 11/8) {
       gap: 1rem;
-      grid-template-columns: repeat(auto-fit, [col-start] 5.5vw [col-end]);
+      grid-template-columns: repeat(auto-fit, [col-start] 5.3vw [col-end]);
     }
     @media (max-aspect-ratio: 11/8) {
       gap: 10px;
