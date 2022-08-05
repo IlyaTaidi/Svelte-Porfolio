@@ -1,34 +1,42 @@
 <script>
-  import Card from '../components/Card.svelte';
-  import webSVG from '../assets/web';
+  import { fade } from 'svelte/transition';
   import chipSVG from '../assets/chip';
   import mobileSVG from '../assets/mobile';
+  import webSVG from '../assets/web';
+  import Card from '../components/Card.svelte';
+
+  let y;
 </script>
 
+<svelte:window bind:scrollY={y} />
 <div class="S3Container">
-  <div class="ServicesHeader">
-    <p class="ServiceHeaderText">Sercices I Provide</p>
-  </div>
-  <div class="S3">
-    <div class="Web">
-      <Card
-        title="Web Application Development"
-        icon={webSVG}
-        content="Web design encompasses many different skills and disciplines in the production and maintenance of websites. The different areas of web design include web graphic design user interface design authoring, including standardised code and proprietary software user experience design and search engine" />
+  {#if y >= 1130}
+    <div
+      class="ServicesHeader"
+      transition:fade={{ duration: 1100, delay: 300 }}>
+      <p class="ServiceHeaderText">Services I Provide</p>
     </div>
-    <div class="Mobile">
-      <Card
-        title="Mobile Application Development"
-        icon={mobileSVG}
-        content="We provide a range of mobile application development services including custom mobile development on Android platforms, building cross-platform apps, designing user experience and integrating novel mobile interfaces such as chat and voice." />
+    <div class="S3" transition:fade={{ duration: 1100, delay: 300 }}>
+      <div class="Web">
+        <Card
+          title="Web Application Development"
+          icon={webSVG}
+          content="Web design encompasses many different skills and disciplines in the production and maintenance of websites. The different areas of web design include web graphic design user interface design authoring, including standardised code and proprietary software user experience design and search engine" />
+      </div>
+      <div class="Mobile">
+        <Card
+          title="Mobile Application Development"
+          icon={mobileSVG}
+          content="We provide a range of mobile application development services including custom mobile development on Android platforms, building cross-platform apps, designing user experience and integrating novel mobile interfaces such as chat and voice." />
+      </div>
+      <div class="Backend">
+        <Card
+          title="Backend Development"
+          icon={chipSVG}
+          content="Graphic design is a craft where professionals create visual content to communicate messages. By applying visual hierarchy and page layout techniques, designers use typography and pictures to meet users' specific needs and focus on the logic of displaying elements in interactive designs, to optimize the user experience." />
+      </div>
     </div>
-    <div class="Backend">
-      <Card
-        title="Backend Development"
-        icon={chipSVG}
-        content="Graphic design is a craft where professionals create visual content to communicate messages. By applying visual hierarchy and page layout techniques, designers use typography and pictures to meet users' specific needs and focus on the logic of displaying elements in interactive designs, to optimize the user experience." />
-    </div>
-  </div>
+  {/if}
 </div>
 
 <style lang="scss">
