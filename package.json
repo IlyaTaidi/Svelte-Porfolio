@@ -47,6 +47,8 @@
   },
   "dependencies": {
     "sass": "^1.54.0",
-    "svelte-device-detector": "^0.2.2"
+    "svelte-device-detector": "^0.2.2",
+    "firebase": "^9.6.10",
+    "rxjs": "^7.5.5"
   }
 }
