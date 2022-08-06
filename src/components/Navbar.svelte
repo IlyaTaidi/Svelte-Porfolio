@@ -6,7 +6,8 @@
 
   let fadeIn;
   let cardState;
-  let checked = false;
+  let checked;
+  $: console.log(checked);
   let y;
   transitionOver.subscribe((data) => {
     fadeIn = data;
@@ -42,7 +43,15 @@
 </script>
 
 <svelte:window bind:scrollY={y} />
-
+<svelte:head>
+  {#if checked}
+    <style>
+      body {
+        overflow-y: hidden !important;
+      }
+    </style>
+  {/if}
+</svelte:head>
 <!-- svelte-ignore a11y-invalid-attribute -->
 {#if fadeIn}
   <nav transition:fade={{ duration: 2000, delay: 1000 }}>
