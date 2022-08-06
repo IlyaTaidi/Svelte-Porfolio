@@ -52,6 +52,8 @@
   }
 
   .title {
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 50%);
     font-family: $title;
     font-weight: $bolder;
     font-size: $medium;
