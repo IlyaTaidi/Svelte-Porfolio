@@ -7,6 +7,8 @@
   let fadeIn;
   let cardState;
   let checked = false;
+  let y;
+  $: console.log(y);
   transitionOver.subscribe((data) => {
     fadeIn = data;
   });
@@ -15,6 +17,10 @@
     cardState = data;
   });
 
+  const scrollHome = () => {
+    animateScroll.scrollTo({ element: '.S1', duration: 2000 });
+    checked = !checked;
+  };
   const scrollAbout = () => {
     animateScroll.scrollTo({ element: '.S2', duration: 2000 });
     currentCardState.set('ABOUT');
@@ -35,6 +41,8 @@
     checked = !checked;
   };
 </script>
+
+<svelte:window bind:scrollY={y} />
 
 <!-- svelte-ignore a11y-invalid-attribute -->
 {#if fadeIn}
@@ -69,11 +77,16 @@
     <label for="nav" class="nav-open"><i /><i /><i /></label>
     <div class="nav-container">
       <ul>
-        <li>
-          <a href="#" on:click={scrollAbout}>About</a>
-        </li>
-        <li><a href="#" on:click={scrollExperience}>Experience</a></li>
-        <li><a href="#" on:click={scrollContact}>Contact</a></li>
+        {#if y >= 600}
+          <li>
+            <a href="#" on:click={scrollHome}>Home</a>
+          </li>
+        {/if}
+        {#if y <= 600 || y >= 1500}
+          <li><a href="#" on:click={scrollAbout}>About</a></li>
+          <li><a href="#" on:click={scrollExperience}>Experience</a></li>
+          <li><a href="#" on:click={scrollContact}>Contact</a></li>
+        {/if}
         <li>
           <a href="#" on:click={scrollServices}>Services</a>
         </li>
