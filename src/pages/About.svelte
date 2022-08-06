@@ -7,7 +7,6 @@
 
   let cardState = 'ABOUT';
   let y;
-  $: console.log(y);
   function handler(event) {
     cardState = event.target.innerText;
   }
@@ -85,16 +84,16 @@
             <div class="S2About" transition:fly={{ x: -100, duration, delay }}>
               <p class="AboutHeader">About Me</p>
               <p class="AboutContent">
-                I'm a self taught Full Stack Developer with a passion for
-                Design. Born and Raised in Ukraine, Currently residing in
-                Florida.
+                I'm a self-taught Full Stack Developer with a passion for
+                design. I was born and raised in Ukraine and I am currently
+                residing in Florida.
                 <br />
                 <br />
-                Whether it's Designing/Building beautiful PWA's, Building complex
-                database structures in Firebase or creating unique user experiences;
+                Whether it's designing or building beautiful PWA's, building complex
+                database structures in Firebase or creating unique user experiences,
                 I will bring your ideas to life.
               </p>
-              <p class="AboutSkills">Technologies and Tools</p>
+              <p class="AboutSkills">Tools and Technologies</p>
               <div class="AboutFooter">
                 {#each skillIcons as { icon, name }}
                   <div class="icon">

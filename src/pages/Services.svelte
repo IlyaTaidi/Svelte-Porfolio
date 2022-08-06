@@ -21,19 +21,19 @@
         <Card
           title="Web Application Development"
           icon={webSVG}
-          content="I specialize in building fully functional, robust, and scalable web applications. I build custom web apps using the technology stack that best aligns with your specific project objective. My web application development services include design, development, testing, support and maintenance. Along with that, I will also help you in technology consultation, modernizing legacy architectures, or migrating to new web architectures." />
+          content="I specialize in building fully functional, robust, and scalable web applications. I build custom web apps using the technology stack that best aligns with your specific project objectives. My web application development services include design, development, testing, support and maintenance. Along with that, I will also help you with technology consultation, modernizing legacy architectures, or migrating to new web architectures." />
       </div>
       <div class="Mobile">
         <Card
           title="Mobile Application Development"
           icon={mobileSVG}
-          content="I offer a full cycle of application design, integration and management. Whether it's a consumer oriented app or a transformative enterprise-class solution, I will lead the mobile app development process from ideation and conception to delivery and ongoing support." />
+          content="I offer a full cycle of application design, integration, and management. Whether it's a consumer-oriented app or a transformative enterprise-class solution, I will lead the mobile app development process from ideation and conception to delivery and ongoing support." />
       </div>
       <div class="Backend">
         <Card
           title="Backend Development"
           icon={chipSVG}
-          content="I can provide high-quality back-end development services to both startups and large companies. Using RESTful API and other cutting-edge technologies to deliver outstanding results. I create solutions that will help you carry out your plans and bring your product to market faster" />
+          content="I can provide high-quality back-end development services to both startups and large companies by building robust back-end software across multiple devices and platforms. I aim to create fault-tolerant back-ends for native and cross-platform applications using the latest technology trends." />
       </div>
     </div>
   {/if}
