@@ -6,7 +6,7 @@
 
   let fadeIn;
   let cardState;
-
+  let checked = false;
   transitionOver.subscribe((data) => {
     fadeIn = data;
   });
@@ -18,17 +18,21 @@
   const scrollAbout = () => {
     animateScroll.scrollTo({ element: '.S2', duration: 2000 });
     currentCardState.set('ABOUT');
+    checked = !checked;
   };
   const scrollExperience = () => {
     animateScroll.scrollTo({ element: '.S2', duration: 2000 });
     currentCardState.set('EXPERIENCE');
+    checked = !checked;
   };
   const scrollContact = () => {
     animateScroll.scrollTo({ element: '.S2', duration: 2000 });
     currentCardState.set('CONTACT');
+    checked = !checked;
   };
   const scrollServices = () => {
     animateScroll.scrollTo({ element: '.S3Container', duration: 2000 });
+    checked = !checked;
   };
 </script>
 
@@ -61,7 +65,7 @@
         class="navLogo"
         d="m213.7 69c3.3 0.8 6.4 1.3 9.1 2.5 1 0.4 2.3 3.1 2 3.4-1.1 1.4-2.9 3.1-4.4 3-8-0.3-16-1.5-24-1.8-6.4-0.2-12.8 0.4-19.2 1-1.7 0.2-3.6 1.6-4.7 3-16.3 20.5-32.8 40.8-48.6 61.6-8.7 11.6-16.2 24.1-24.2 36.1-0.3 0.5-0.5 1.1-0.8 1.9 10.4 1.4 21.1-2 30.7 3.3 1.3 0.6 2.4 1.6 3.5 2.4-1.2 4.7-3.5 5.2-7.8 3.8-10.3-3.3-21-2.1-31.4-0.6-14.1 2.1-28.1 4.7-42.4 7.1-0.9-4.4-0.7-7 3.9-7.8 9.7-1.7 19.3-3.8 28.9-6 2-0.5 4.6-1.8 5.5-3.5 10.3-18.2 21.9-35.4 34.9-51.6 7.7-9.7 14.9-19.6 22.5-29.3 3.9-5 8.3-9.7 12.4-14.6 1.1-1.3 1.9-2.7 3.7-5.4-9.5 1.1-17.4 1.8-25.2 3.1-6.2 0.9-12.2 2.9-18.4 3.9-1.4 0.3-3.8-1.1-4.4-2.4-0.5-1.1 0.6-3.9 1.8-4.5 3.1-1.6 6.5-3 9.9-3.5q17.7-2.4 35.5-4c9.8-1 19.6-1.7 29.5-2 7-0.2 14.1 0.6 21.7 0.9z" />
     </svg>
-    <input type="checkbox" id="nav" class="hidden" />
+    <input type="checkbox" id="nav" class="hidden" bind:checked />
     <label for="nav" class="nav-open"><i /><i /><i /></label>
     <div class="nav-container">
       <ul>
