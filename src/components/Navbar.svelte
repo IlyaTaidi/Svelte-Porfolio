@@ -8,7 +8,6 @@
   let cardState;
   let checked = false;
   let y;
-  $: console.log(y);
   transitionOver.subscribe((data) => {
     fadeIn = data;
   });
