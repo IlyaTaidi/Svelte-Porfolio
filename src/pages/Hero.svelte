@@ -25,8 +25,10 @@
         I'm a Full-Stack Developer specializing in designing and building
         <span class="exceptional">exceptional</span> digital experiences.
       </div>
-      <a class="heroButton" href="src/assets/CV.pdf" target="_blank"
-        >View My Resume</a>
+      <a
+        class="heroButton"
+        href="https://drive.google.com/file/d/1AJ6n9tLKnTeHjSOCr4E3Ts8Wa6jN5KLy/view?usp=sharing"
+        target="_blank">View My Resume</a>
     </div>
     <div class="mouse" transition:fly={{ y: 100, duration, delay }} />
   {/if}
