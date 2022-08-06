@@ -1,12 +1,35 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
+  import * as animateScroll from 'svelte-scrollto';
   import { transitionOver } from '../lib/pageLoad';
+  import { currentCardState } from '../lib/pageLoad';
 
   let fadeIn;
+  let cardState;
 
   transitionOver.subscribe((data) => {
     fadeIn = data;
   });
+
+  currentCardState.subscribe((data) => {
+    cardState = data;
+  });
+
+  const scrollAbout = () => {
+    animateScroll.scrollTo({ element: '.S2', duration: 2000 });
+    currentCardState.set('ABOUT');
+  };
+  const scrollExperience = () => {
+    animateScroll.scrollTo({ element: '.S2', duration: 2000 });
+    currentCardState.set('EXPERIENCE');
+  };
+  const scrollContact = () => {
+    animateScroll.scrollTo({ element: '.S2', duration: 2000 });
+    currentCardState.set('CONTACT');
+  };
+  const scrollServices = () => {
+    animateScroll.scrollTo({ element: '.S3Container', duration: 2000 });
+  };
 </script>
 
 <!-- svelte-ignore a11y-invalid-attribute -->
@@ -42,10 +65,14 @@
     <label for="nav" class="nav-open"><i /><i /><i /></label>
     <div class="nav-container">
       <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Services</a></li>
+        <li>
+          <a href="#" on:click={scrollAbout}>About</a>
+        </li>
+        <li><a href="#" on:click={scrollExperience}>Experience</a></li>
+        <li><a href="#" on:click={scrollContact}>Contact</a></li>
+        <li>
+          <a href="#" on:click={scrollServices}>Services</a>
+        </li>
       </ul>
     </div>
   </nav>

@@ -4,8 +4,13 @@
   import { fly } from 'svelte/transition';
   import Contact from '../components/Contact.svelte';
   import Timeline from '../components/Timeline.svelte';
+  import { currentCardState } from '../lib/pageLoad';
 
-  let cardState = 'ABOUT';
+  let cardState;
+  // eslint-disable-next-line import/prefer-default-export
+  currentCardState.subscribe((data) => {
+    cardState = data;
+  });
   let y;
   function handler(event) {
     cardState = event.target.innerText;

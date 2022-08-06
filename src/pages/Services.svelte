@@ -10,6 +10,10 @@
   let y;
   const duration = 900;
   const delay = 50;
+
+  const scrollTop = () => {
+    animateScroll.scrollTo({ element: '.S1', duration: 2000 });
+  };
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -38,7 +42,7 @@
           content="I can provide high-quality back-end development services to both startups and large companies by building robust back-end software across multiple devices and platforms. I aim to create fault-tolerant back-ends for native and cross-platform applications using the latest technology trends." />
       </div>
     </div>
-    <button class="noselect" on:click={() => animateScroll.scrollToTop()}>
+    <button class="noselect" on:click={scrollTop}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
