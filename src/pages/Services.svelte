@@ -1,8 +1,10 @@
 <script>
   import { fly } from 'svelte/transition';
+  import * as animateScroll from 'svelte-scrollto';
   import chipSVG from '../assets/chip';
   import mobileSVG from '../assets/mobile';
   import webSVG from '../assets/web';
+  // @ts-ignore
   import Card from '../components/Card.svelte';
 
   let y;
@@ -14,7 +16,9 @@
 <div class="S3Container">
   {#if y >= 1160}
     <div class="ServicesHeader" transition:fly={{ duration, delay }}>
-      <p class="ServiceHeaderText">MY SERVICES INCLUDE</p>
+      <p class="ServiceHeaderText" on:click={() => animateScroll.scrollToTop()}>
+        MY SERVICES INCLUDE
+      </p>
     </div>
     <div class="S3" transition:fly={{ duration, delay }}>
       <div class="Web">
@@ -68,6 +72,7 @@
   }
 
   .ServicesHeader {
+    cursor: pointer;
     display: grid;
     grid-area: ServicesHeader;
     border-bottom: 1px solid $purple;
