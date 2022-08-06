@@ -46,6 +46,7 @@
     "vite": "^3.0.0"
   },
   "dependencies": {
+    "firebase": "^9.9.2",
     "sass": "^1.54.0",
     "svelte-device-detector": "^0.2.2"
   }
