@@ -150,7 +150,7 @@
                 database structures in Firebase or creating unique user experiences;
                 I will bring your ideas to life.
               </p>
-              <p class="AboutSkills">Technologies and Tools</p>
+              <p class="AboutSkills">Tools and Technologies</p>
               <div class="AboutFooter">
                 {#each skillIconsMobile as { icon, name }}
                   <div class="iconMobile">

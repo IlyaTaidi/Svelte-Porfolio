@@ -1,5 +1,10 @@
-import { initializeApp } from "Firebase/app"
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCz6fuct9FxXso93MPGnTmXUitWfpWKTcg",
   authDomain: "svelteportfolio-bfe0d.firebaseapp.com",
@@ -10,10 +15,5 @@ const firebaseConfig = {
   measurementId: "G-5LHMPEWWZM"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-
-
-export { }; // 👈️ if you don't have anything else to export
