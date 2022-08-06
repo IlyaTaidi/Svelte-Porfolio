@@ -18,20 +18,6 @@ $lightBlue: #9aa8d1;
 $darkBlue: #7086ae;
 $green: #bdd56e;
 
-$largeFont: calc(25px + 1.5vh + 1.5vw);
-$mediumFont: calc(17px + 1.5vh + 1.5vw);
-$smediumFont: calc(16px + 1vh + 1vw);
-$smallFont: calc(16px + 0.7vh + 0.7vw);
-$smallerFont: calc(13px + 0.6vh + 0.6vw);
-$tinyFont: calc(9px + 0.5vh + 0.5vw);
-$tinyerFont: calc(7px + 0.4vh + 0.4vw);
-$tinyestFont: calc(6px + 0.3vh + 0.3vw);
-
-$titleFont: "Italiana";
-$titleWeight: 600;
-$textFont: "Roboto";
-$textWeight: 300;
-
 $xsmall: calc(5px + 0.35vh + 0.35vw);
 $servicesFont: calc(8px + 0.4vh + 0.4vw);
 $small: calc(9px + 0.5vh + 0.5vw);
@@ -46,3 +32,21 @@ $bolder: 600;
 
 $title: "Italiana";
 $content: "Roboto";
+
+@keyframes bounce {
+  0% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+  25% {
+    transform: translateX(-50%) translateY(-65%);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+  75% {
+    transform: translateX(-50%) translateY(-35%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+}

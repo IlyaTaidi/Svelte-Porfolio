@@ -54,7 +54,7 @@
 <style lang="scss">
   @import '../variables.scss';
   nav {
-    font-family: $titleFont;
+    font-family: $title;
     position: absolute;
     width: 100%;
     height: 9vh;

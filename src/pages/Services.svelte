@@ -16,9 +16,7 @@
 <div class="S3Container">
   {#if y >= 1160}
     <div class="ServicesHeader" transition:fly={{ duration, delay }}>
-      <p class="ServiceHeaderText" on:click={() => animateScroll.scrollToTop()}>
-        MY SERVICES INCLUDE
-      </p>
+      <p class="ServiceHeaderText">MY SERVICES INCLUDE</p>
     </div>
     <div class="S3" transition:fly={{ duration, delay }}>
       <div class="Web">
@@ -40,11 +38,76 @@
           content="I can provide high-quality back-end development services to both startups and large companies by building robust back-end software across multiple devices and platforms. I aim to create fault-tolerant back-ends for native and cross-platform applications using the latest technology trends." />
       </div>
     </div>
+    <button class="noselect" on:click={() => animateScroll.scrollToTop()}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24">
+        <path
+          d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
+      </svg>
+    </button>
   {/if}
 </div>
 
 <style lang="scss">
   @import '../variables.scss';
+
+  .noselect {
+    grid-area: noselect;
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    background-color: #5de6de;
+    background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+    border: none;
+    border-radius: 50%;
+    transition: 200ms;
+    &:hover {
+      width: 80px;
+      height: 80px;
+    }
+    @media (min-aspect-ratio: 11/8) {
+      margin: auto;
+      width: 75px;
+      height: 75px;
+      &:before {
+        font-size: $small;
+        font-weight: $bolder;
+        font-family: $title;
+        content: 'Back to Top';
+        position: absolute;
+        transform: translateX(-50%) translateY(45px);
+        transition: 200ms;
+        color: transparent;
+      }
+      &:hover {
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        svg {
+          animation: bounce 2s infinite linear;
+        }
+        &:before {
+          color: #fff;
+        }
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    @media (max-aspect-ratio: 11/8) {
+      margin: 3.5vh auto 1vh;
+      width: 55px;
+      height: 55px;
+    }
+    svg {
+      fill: white;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
 
   .S3Container {
     display: grid;
@@ -57,7 +120,7 @@
         '. . .'
         '. ServicesHeader .'
         '. S3 .'
-        '. . .';
+        '. noselect .';
     }
     @media (max-aspect-ratio: 11/8) {
       grid-template-columns: 0.1fr 2.6fr 0.1fr;
@@ -67,7 +130,7 @@
         '. . .'
         '. ServicesHeader .'
         '. S3 .'
-        '. . .';
+        '. noselect .';
     }
   }
 
