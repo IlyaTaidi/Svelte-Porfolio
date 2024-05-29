@@ -27,7 +27,7 @@
       </div>
       <a
         class="heroButton"
-        href="https://drive.google.com/file/d/1X0YtJVqQ4-1CmC3Ao_AHzaC6qAzpu27n/view?usp=sharing"
+        href="https://drive.google.com/file/d/1Rc8yagwlOODm9zEmzb0KR20oJXP5HnyU/view?usp=sharing"
         target="_blank">View My Resume</a>
     </div>
     <div class="mouse" transition:fly={{ y: 100, duration, delay }} />
