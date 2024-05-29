@@ -11,8 +11,8 @@ const firebaseConfig = {
   projectId: "svelteportfolio-bfe0d",
   storageBucket: "svelteportfolio-bfe0d.appspot.com",
   messagingSenderId: "283055177781",
-  appId: "1:283055177781:web:c146b54deb65e6d675b17c",
-  measurementId: "G-5LHMPEWWZM"
+  appId: "1:283055177781:web:99eacabf30de2d4d75b17c",
+  measurementId: "G-KYGM4754GD"
 };
 
 // Initialize Firebase

@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "svelteportfolio-bfe0d"
-  }
+    "default": "svelteportfolio-bfe0d",
+    "staging": "svelteportfolio-bfe0d"
+  },
+  "targets": {},
+  "etags": {}
 }
